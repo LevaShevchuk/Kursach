@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Циклы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Циклы</h2>
+                <p class="descrip"><span class="highlight">Циклы</span> являются управляющими конструкциями, позволяя в зависимости от определённых условий выполнять некоторое действие множество раз. В <span class="highlight">C#</span> имеются следующие <span class="highlight">виды циклов:</span></p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">for;</span></li>
+                    <li class="descrip-li"><span class="highlight">do...while;</span></li>
+                    <li class="descrip-li"><span class="highlight">while;</span></li>
+                    <li class="descrip-li"><span class="highlight">foreach.</span></li>
+                </ul>
+                <p class="heading">Цикл for</p>
+                <p class="descrip"><span class="highlight">Цикл for</span> имеет следующее формальное определение:</p>
+                <pre class="example-code"><code><span class="keywords">for</span> ([инициализация счетчика]; [условие]; [изменение счетчика])<br>{<br>    <span class="comments">// действия</span><br>}</code></pre>
+                <p class="descrip">Далее рассматривается стандартный <span class="highlight">цикл for</span>:</p>
+                <pre class="example-code"><code><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; 9; i++)<br>{<br>     <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Квадрат числа</span> {i} <span class="string-code">равен</span> {i*i}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Первая часть объявления цикла</span> - <span class="highlight">int i = 0</span> - создаёт и инициализирует счётчик <span class="highlight">i</span>. Счётчик необязательно должен представлять тип <span class="highlight">int</span>. Это может быть и другой числовой тип, например, <span class="highlight">float</span>. Перед выполнением <span class="highlight">цикла</span> его значение будет равно 0. В данном случае это то же самое, что и объявление переменной.</p>
+                <p class="descrip"><span class="highlight">Вторая часть</span> - условие, при котором будет выполняться <span class="highlight">цикл</span>. Пока условное выражение возвращает <span class="highlight">true</span>, <span class="highlight">цикл</span> будет выполняться. В данном случае <span class="highlight">цикл</span> будет выполняться, пока счётчик <span class="highlight">i</span> не достигнет 9.</p>
+                <p class="descrip"><span class="highlight">И третья часть</span> - приращение счётчика на единицу. Необязательно увеличивать переменную <span class="highlight">i</span> на единицу. Её также можно и уменьшать, например, <span class="highlight">i--</span></p>
+                <p class="descrip">В итоге блок <span class="highlight">цикла</span> сработает 9 раз, пока значение <span class="highlight">i</span> не станет равным 9. И каждый раз это значение будет увеличиваться на 1.</p>
+                <p class="descrip">Необязательно указывать все условия при объявлении <span class="highlight">цикла</span>. Например, можно написать так:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> i = 0;<br><span class="keywords">for</span> (; ;)<br>{<br>     <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Квадрат числа</span> {i} <span class="string-code">равен</span> {i*i}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip">Формально определение <span class="highlight">цикла</span> осталось тем же, только теперь блоки в определении пустые: <span class="highlight">for (; i &lt;;)</span>. В данном случае нет инициализированной переменной-счётчика, нет условия, поэтому <span class="highlight">цикл</span> будет работать вечно.</p>
+                <p class="descrip">Также можно опустить ряд блоков:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> i = 0;<br><span class="keywords">for</span> (; i &lt; 9;)<br>{<br>     <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Квадрат числа</span> {i} <span class="string-code">равен</span> {i*i}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip">Данный пример эквивалентен первому примеру: здесь также есть счётчик, только создан он вне <span class="highlight">цикла</span>. Присутствует условие выполнения <span class="highlight">цикла</span>. И есть приращение счётчика уже в самом блоке  <span class="highlight">for</span>.</p>
+                <p class="heading">Цикл do...while</p>
+                <p class="descrip">В <span class="highlight">цикле do...while</span> сначала выполняется код <span class="highlight">цикла</span>, а потом происходит проверка условия в инструкции <span class="highlight">while</span>. И пока это условие истинно, <span class="highlight">цикл</span> повторяется. Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> i = 6;<br><span class="keywords">do</span><br>{<br>     <span class="keywords-light">Console</span>.WriteLine(i);<br>     i--<br>}<br><span class="keywords">while</span> (i > 0);</code></pre>
+                <p class="descrip">В данном случае код <span class="highlight">цикла</span> сработает 6 раз, пока <span class="highlight">i</span> не станет равным нулю. Важно отметить, что <span class="highlight">цикл do</span> гарантирует хотя бы единократное выполнение действий, даже если условие в инструкции <span class="highlight">while</span> не будет истинно. Программный код можно изменить следующим образом:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> i = -1;<br><span class="keywords">do</span><br>{<br>     <span class="keywords-light">Console</span>.WriteLine(i);<br>     i--<br>}<br><span class="keywords">while</span> (i > 0);</code></pre>
+                <p class="heading">Цикл while</p>
+                <p class="descrip">В отличие от цикла <span class="highlight">do...while</span> цикл <span class="highlight">while</span> сразу проверяет истинность условия, и если оно истинно, то код <span class="highlight">цикла</span> выполняется:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> i = 6;<br><span class="keywords">while</span> (i > 0)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(i);<br>   i--;<br>}</code></pre>                
+                <p class="heading">Операторы continue и break</p>
+                <p class="descrip">Иногда возникает ситуация, когда требуется выйти из <span class="highlight">цикла</span>, не дожидаясь его завершения. В этом случае можно воспользоваться оператором <span class="highlight">break</span>. Например:</p>
+                <pre class="example-code"><code><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; 9; i++)<br>{<br>      <span class="keywords">if</span> (i == 5)<br>            <span class="keywords">break</span>;<br>       <span class="keywords-light">Console</span>.WriteLine(i);<br>}</code></pre>
+                <p class="descrip">Хотя в условии <span class="highlight">цикла</span> сказано, что <span class="highlight">цикл</span> будет выполняться, пока счётчик <span class="highlight">i</span> не достигнет значения 9, в реальности <span class="highlight">цикл</span> сработает 5 раз. Так как при достижении счётчиком <span class="highlight">i</span> значения 5, сработает оператор <span class="highlight">break</span>, и <span class="highlight">цикл</span> завершится.</p>
+                <pre class="example-code console"><code>0<br>1<br>2<br>3<br>4</code></pre>
+                <p class="descrip">Но что делать, если необходимо, чтобы при проверке <span class="highlight">цикл</span> не завершался, а просто пропускал текущую итерацию. Для этого можно воспользоваться оператором <span class="highlight">continue</span>:</p>                
+                <pre class="example-code"><code><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; 9; i++)<br>{<br>      <span class="keywords">if</span> (i == 5)<br>            <span class="keywords">continue</span>;<br>       <span class="keywords-light">Console</span>.WriteLine(i);<br>}</code></pre>
+                <p class="descrip">В этом случае <span class="highlight">цикл</span>, когда дойдет до числа 5, которое не удовлетворяет условию проверки, просто пропустит это число и перейдет к следующей итерации:</p>
+                <pre class="example-code console"><code>0<br>1<br>2<br>3<br>4<br>6<br>7<br>8<br>9</code></pre>
+                <p class="heading">Цикл foreach</p>
+                <p class="descrip"><span class="highlight">Цикл foreach</span> предназначен для перебора элементов в контейнерах, в том числе в массивах. Формальное объявление <span class="highlight">цикла foreach</span>:</p>
+                <pre class="example-code"><code><span class="keywords">foreach</span> (тип_данных название_переменной <span class="keywords">in</span> контейнер)<br>{<br>    <span class="comments">// действия</span><br>}</code></pre>
+                <p class="descrip">Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = <span class="keywords">new int</span>[] { 1, 2, 3, 4, 5 };<br><span class="keywords">foreach</span> (<span class="keywords">int</span> i <span class="keywords">in</span> numbers)<br>{<br>    <span class="keywords-light">Console</span>.WriteLine(i);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>1<br>2<br>3<br>4<br>5</code></pre>
+                <p class="descrip">Здесь в качестве контейнера выступает <span class="highlight">массив</span> данных типа <span class="highlight">int</span>. Поэтому была объявлена переменная с типом <span class="highlight">int</span>.</p>
+                <p class="descrip">Подобные действия можно совершить и с помощью <span class="highlight">цикла for</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = <span class="keywords">new int</span>[] { 1, 2, 3, 4, 5 };<br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; numbers.Length; i++)<br>{<br>    <span class="keywords-light">Console</span>.WriteLine(i);<br>}</code></pre>
+                <p class="descrip">В то же время <span class="highlight">цикл for</span> более гибкий по сравнению с <span class="highlight">foreach</span>. Если <span class="highlight">foreach</span> последовательно извлекает элементы контейнера и только для чтения, то в <span class="highlight">цикле for</span> можно перескакивать на несколько элементов вперёд в зависимости от приращения счётчика, а также можно изменять элементы:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = <span class="keywords">new int</span>[] { 1, 2, 3, 4, 5 };<br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; numbers.Length; i++)<br>{<br>    numbers[i] = numbers[i] * 2;<br>    <span class="keywords-light">Console</span>.WriteLine(i);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>0<br>1<br>2<br>3<br>4</code></pre>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/cycles.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

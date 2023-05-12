@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Структура программы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Структура программы</h2>
+                <p class="heading">Инструкции</p>
+                <p class="descrip">Базовым строительным блоком программы являются <span class="highlight">инструкции</span> (statement). <span class="highlight">Инструкция</span> представляет собой некоторое действие, например, арифметическую операцию, вызов метода, объявление переменной и присваивание ей значения. В конце каждой <span class="highlight">инструкции</span> в <span class="highlight">C#</span> ставится <span class="highlight">точка с запятой (;)</span>. Данный знак указывает компилятору на конец <span class="highlight">инструкции</span>. Например:</p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Привет!"</span>);</code></pre>
+                <p class="descrip">Данная строка представляет собой вызов метода <span class="highlight">Console.WriteLine</span>, который выводит на консоль строку. В данном случае вызов метода является <span class="highlight">инструкцией</span> и поэтому завершается <span class="highlight">точкой с запятой</span>.</p>
+                <p class="descrip"><span class="highlight">Набор инструкций</span> может объединяться в блок кода. Блок кода заключается в фигурные скобки, а <span class="highlight">инструкции</span> помещаются между открывающей и закрывающей фигурными скобками:</p>
+                <pre class="example-code"><code>{<br>    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Привет!"</span>);<br>    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Добро пожаловать в C#!"</span>);<br>}</code></pre>
+                <p class="descrip">В данном блоке кода содержатся две <span class="highlight">инструкции</span>, которые выводят на консоль определённую строку.</p>
+                <p class="descrip">Одни блоки кода могут содержать другие блоки:</p>
+                <pre class="example-code"><code>{<br>    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Первый блок"</span>);<br>    {<br>        <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Второй блок"</span>);<br>    }<br>}</code></pre>
+                <p class="heading">Регистрозависимость</p>
+                <p class="descrip"><span class="highlight">C#</span> является <span class="highlight">регистрозависимым</span> языком. Это значит, в зависимости от регистра символов какое-то определённые названия может представлять разные классы, методы, переменные и т.д. Например, название обязательного метода <span class="highlight">Main</span> начинается именно с большой буквы: <span class="highlight">"Main"</span>. Если назвать метод <span class="highlight">"main"</span>, то программа не скомпилируется, так как метод, который представляет собой стартовую точку в приложении, обязательно должен называться <span class="highlight">"Main"</span>, а не <span class="highlight">"main"</span> или <span class="highlight">"MAIN"</span>.</p>
+                <p class="heading">Комментарии</p>
+                <p class="descrip">Важной частью программного кода являются <span class="highlight">комментарии</span>. Они не являются частью программы и игнорируются при компиляции. Тем не менее <span class="highlight">комментарии</span> делают программный код более понятным, помогая разобраться в тех или иных его частях.</p>
+                <p class="descrip">Существует два типа <span class="highlight">комментариев: однострочный</span> и <span class="highlight">многострочный</span>. <span class="highlight">Однострочный комментарий</span> размещается на одной строке после двойного слеша <span class="highlight">//</span>. <span class="highlight">Многострочный комментарий</span> заключается между символами <span class="highlight">/*</span> и <span class="highlight">*/</span>. Он может размещаться на нескольких строках. Далее представлен пример использования <span class="highlight">комментариев</span>:</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br><span class="comments">    /*<br>       программа, которая спрашивает у пользователя имя<br>       и выводит его на консоль<br>   */</span><br>    <span class="keywords">class</span> <span class="keywords-light">Program</span><br>    {<br>        <span class="comments">// метод Main - стартовая точка приложения</span><br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите своё имя: "</span>);<br>            <span class="keywords">string</span> name = <span class="keywords-light">Console</span>.ReadLine(); <span class="comments">        // вводим своё имя</span><br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Привет,</span> {name}<span class="string-code">!"</span>);<span class="comments">    // программа выводит имя на консоль</span><br>        }<br>    }<br>}</code></pre>
+             </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

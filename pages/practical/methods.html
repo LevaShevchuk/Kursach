@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Методы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Методы</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Разработать метод, возвращающий произведение трёх чисел. Входные параметры метода – три целых числа.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="comments">// Блок основной программы</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите первое число: "</span>);<br><span class="keywords">int</span> a = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите второе число: "</span>);<br><span class="keywords">int</span> b = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите третье число: "</span>);<br><span class="keywords">int</span> c = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords">int</span> p = Proiz(a, b, c);<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Произведение чисел равно "</span> + p);<br><br><span class="keywords-light">Console</span>.ReadKey();<br><br><span class="comments">// блок определения метода, возвращающего произведение чисел</span><br><span class="keywords">static int</span> Proiz(<span class="keywords">int</span> x, <span class="keywords">int</span> y, <span class="keywords">int</span> z)<br>{<br>    <span class="keywords">return</span> x * y * z;<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите первое число:<br>5<br>Введите второе число:<br>6<br>Введите третье число:<br>3<br>Произведение чисел равно 90</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Разработать метод, возвращающий наибольшее из двух чисел. Входные параметры метода – два целых числа, неравные между собой.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Разработать метод, возвращающий куб разности двух чисел. Входные параметры метода – два вещественных числа.</p>  
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Разработать метод, возвращающий сумму квадратов трёх чисел. Входные параметры метода – три вещественных числа.</p>          
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

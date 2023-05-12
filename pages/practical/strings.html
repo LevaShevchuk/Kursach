@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Работа со строками</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Работа со строками</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Дана строка. Определить, сколько в ней символов r, k, t.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите строку из символов: "</span>);<br><span class="keywords">string</span> s = <span class="keywords-light">Console</span>.ReadLine();<br><br ><span class="keywords">int</span> r = 0;<br><span class="keywords">int</span> k = 0;<br><span class="keywords">int</span> t = 0;<br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; s.Length; i++)<br>{    
+    <span class="keywords">if</span> (s[i] == <span class="string-code">'r'</span>)<br>    {<br>        r++;<br>    }
+
+    <span class="keywords">if</span> (s[i] == <span class="string-code">'k'</span>)
+    {
+        k++;
+    }
+    <span class="keywords">if</span> (s[i] == <span class="string-code">'t'</span>)
+    {
+        t++;
+    }
+}
+
+<span class="keywords">if</span> (r == 0)
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cимволы r в введённой строке отсутствуют!"</span>);
+}
+
+<span class="keywords">else</span>
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Количество символов r в введённой строке равно "</span> + r);
+}
+
+
+<span class="keywords">if</span> (k == 0)
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cимволы k в введённой строке отсутствуют!"</span>);
+}
+
+<span class="keywords">else</span>
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Количество символов k в введённой строке равно "</span> + k);
+}
+
+
+<span class="keywords">if</span> (t == 0)
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cимволы t в введённой строке отсутствуют!"</span>);
+}
+
+<span class="keywords">else</span>
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Количество символов t в введённой строке равно "</span> + t);
+}
+<span class="keywords-light">Console</span>.ReadKey();</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите строку из символов:
+rgrgkgkgtgtg
+Количество символов r в введённой строке равно 2
+Количество символов k в введённой строке равно 2
+Количество символов t в введённой строке равно 2       </code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Дана строка. Преобразовать её, поместив вначале все символы, расположенные на чётных позициях строки, а затем все символы, расположенные на нечётных позициях.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Дана исходная строка цифр без пробелов. Чётные цифры записать в одну строку, а нечётные – в другую. Вывести исходную строку и полученные строки.</p> 
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Дана строка, содержашая английский текст. Определить количество слов, начинающихся с буквы b.</p> 
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

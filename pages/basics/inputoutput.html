@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Консольный ввод-вывод</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Консольный ввод-вывод</h2>
+                <p class="heading">Консольный вывод</p>
+                <p class="descrip">Для вывода информации на консоль используется встроенный метод <span class="highlight">Console.WriteLine</span>. В случае, если требуется вывести некоторую информацию на консоль, её необходимо передать в метод <span class="highlight">Console.WriteLine</span>:</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>    <span class="keywords">class</span> Program<br>    {<br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords">string</span> hello = <span class="string-code">"Привет, мир!"</span>;<br>            <span class="keywords-light">Console</span>.WriteLine(hello);<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Добро пожаловать в C#!"</span>);<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Пока, мир!"</span>);<br>        }<br>    }<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>    
+                <pre class="example-code console"><code>Привет, мир!<br>Добро пожаловать в C#!<br>Пока, мир!</code></pre>
+                <p class="descrip">Нередко возникает необходимость вывести на консоль в одной строке значения сразу нескольких переменных. В этом случае можно использовать приём, который называется <span class="highlight">интерполяцией</span>:</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>    <span class="keywords">class</span> Program<br>    {<br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords">string</span> name = <span class="string-code">"Лев"</span>;<br>            <span class="keywords">int</span> age = 20;<br>            <span class="keywords">double</span> height = 1.73;<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Имя:</span> {name}  <span class="string-code">Возраст:</span> {age}  <span class="string-code">Рост:</span> {height}<span class="string-code">"</span>);<br><br>            <span class="keywords-light">Console</span>.ReadKey();<br>        }<br>    }<br>}</code></pre>
+                <p class="descrip">Для встраивания отдельных значений в выводимую на консоль строку используются фигурные скобки, в которые заключается встраиваемое значение. Это может быть значение переменной (<span class="highlight">{name}</span>) или более сложное выражение (например, операция сложения <span class="highlight">{4 + 7}</span>). Перед всей строкой ставится знак доллара <span class="highlight">$</span>.</p>
+                <p class="descrip">При выводе на консоль вместо помещённых в фигурные скобки выражений будут выводиться их значения:</p>
+                <pre class="example-code console"><code>Имя: Лев   Возраст: 20   Рост: 1,73 м</code></pre>
+                <p class="descrip">Существует другой способ вывода на консоль сразу нескольких значений:</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>    <span class="keywords">class</span> Program<br>    {<br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords">string</span> name = <span class="string-code">"Лев"</span>;<br>            <span class="keywords">int</span> age = 20;<br>            <span class="keywords">double</span> height = 1.73;<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Имя:</span> {0}  <span class="string-code">Возраст:</span> {2}  <span class="string-code">Рост:</span> {1} <span class="string-code">м"</span>, name, height, age);<br><br>            <span class="keywords-light">Console</span>.ReadKey();<br>        }<br>    }<br>}</code></pre>
+                <p class="descrip">Этот способ подразумевает, что первый параметр в методе <span class="highlight">Console.WriteLine</span> представляет выводимую строку <span class="highlight">("Имя: {0} Возраст: {2} Рост: {1} м")</span>. Все последующие параметры представляют значения, которые могут быть встроены в эту строку (<span class="highlight">name, height, age</span>). При этом важен порядок подобных параметров. Например, в данном случае вначале идёт <span class="highlight">name</span>, потом <span class="highlight">height</span> и потом <span class="highlight">age</span>. Поэтому <span class="highlight">name</span> будет представлять параметр с номером <span class="highlight">0</span> (нумерация начинается с нуля), <span class="highlight">height</span> имеет номер <span class="highlight">1</span>, а <span class="highlight">age</span> - номер <span class="highlight">2</span>. Поэтому в строке <span class="highlight">"Имя: {0} Возраст: {2} Рост: {1} м"</span> на место плейсхолдеров <span class="highlight">{0}, {2}, {1}</span> будут вставляться значения соответствующих параметров.</p>
+                <p class="descrip">Кроме <span class="highlight">Console.WriteLine()</span> можно также использовать метод <span class="highlight">Console.Write()</span>. Он работает точно таким же образом за тем исключением, что не осуществляет переход на следующую строку.</p>
+                <p class="heading">Консольный ввод</p>
+                <p class="descrip">Кроме вывода информации на консоль можно также и получать информацию с консоли. Для этого предназначен метод <span class="highlight">Console.ReadLine()</span>. Он позволяет получить введённую строку.</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>    <span class="keywords">class</span> Program<br>    {<br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords-light">Console</span>.Write(<span class="string-code">"Введите свое имя: "</span>);<br>            <span class="keywords">string</span> name = <span class="keywords-light">Console</span>.ReadLine();<br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Привет,</span> {name}<span class="string-code">!"</span>);<br><br>            <span class="keywords-light">Console</span>.ReadKey();<br>        }<br>    }<br>}</code></pre>
+                <p class="descrip">В данном случае всё, что вводит пользователь передаётся в переменную <span class="highlight">name</span> с помощью метода <span class="highlight">Console.ReadLine</span>.</p>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите своё имя: Лев<br>Привет, Лев!</code></pre>
+                <p class="descrip">Также для ввода информации в консоли может использоваться метод <span class="highlight">Console.ReadKey()</span>, который очень часто используется в конце программы для задержки окна консоли.</p>
+                <p class="descrip">Таким образом можно вводить информацию через консоль. Однако минусом этого метода является то, что <span class="highlight">Console.ReadLine</span> считывает информацию в виде строки. Поэтому по умолчанию её можно присвоить только переменной типа <span class="highlight">string</span>. Как быть, если, например, нужно ввести возраст в переменную типа <span class="highlight">int</span> или другую информацию в переменные типа <span class="highlight">double</span> или <span class="highlight">decimal</span>? По умолчанию платформа <span class="highlight">.NET</span> предоставляет ряд методов, которые позволяют преобразовать различные значения к типам <span class="highlight">int</span>, <span class="highlight">double</span> и т.д. Далее перечислены некоторые из этих методов:</p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Convert.ToInt32()</span> (преобразует к типу <span class="highlight">int</span>);</li>
+                    <li class="descrip-li"><span class="highlight">Convert.ToDouble()</span> (преобразует к типу <span class="highlight">double</span>);</li>
+                    <li class="descrip-li"><span class="highlight">Convert.ToDecimal()</span> (преобразует к типу <span class="highlight">decimal</span>);</li>
+                </ul>
+                <p class="descrip"><span class="highlight">Пример ввода значений:</span></p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>    <span class="keywords">class</span> Program<br>    {<br>        <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>        {<br>            <span class="keywords-light">Console</span>.Write(<span class="string-code">"Введите имя: "</span>);<br>            <span class="keywords">string</span> name = <span class="keywords-light">Console</span>.ReadLine();<br><br>            <span class="keywords-light">Console</span>.Write(<span class="string-code">"Введите возраст: "</span>);<br>            <span class="keywords">int</span> age = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><br>            <span class="keywords-light">Console</span>.Write(<span class="string-code">"Введите рост: "</span>);<br>            <span class="keywords">double</span> height = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br>            <span class="keywords-light">Console</span>.Write(<span class="string-code">"Введите размер зарплаты (стипендии): "</span>);<br>            <span class="keywords">decimal</span> salary = <span class="keywords-light">Convert</span>.ToDecimal(<span class="keywords-light">Console</span>.ReadLine());<br><br>            <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Имя:</span> {name}  <span class="string-code">Возраст:</span> {age}  <span class="string-code">Рост:</span> {height} <span class="string-code">м  Зарплата (стипендия):</span> {salary} <span class="string-code">рублей"</span>);<br><br>            <span class="keywords-light">Console</span>.ReadKey();<br>        }<br>    }<br>}</code></pre>
+                <p class="descrip">При вводе важно учитывать <span class="highlight">текущую операционную систему</span>. В одних культурах разделителем между целой и дробной частью является <span class="highlight">точка</span> (США, Великобритания...), в других - <span class="highlight">запятая</span> (Россия, Германия...). Например, если текущая ОС - русскоязычная, необходимо вводить дробные числа с разделителем <span class="highlight">запятой</span>. Если локализация англоязычная, разделителем целой и дробной части при вводе будет <span class="highlight">точка</span>.</p>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите имя: Лев<br>Введите возраст: 20<br>Введите рост: 1,73<br>Введите размер зарплаты (стипендии): 768,21<br>Имя: Лев   Возраст: 20   Рост: 1,73 м   Зарплата (стипендия): 768,21 рублей</code></pre>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/inputoutput.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Арифметические операции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Арифметические операции</h2>
+                <p class="descrip">В <span class="highlight">C#</span> используется большинство <span class="highlight">операций</span>, которые применяются и в других языках программирования. <span class="highlight">Операции</span> представляют собой определённые действия над <span class="highlight">операндами</span> - участниками операции. В качестве <span class="highlight">операнда</span> может выступать переменная или какое-либо значение (например, число). <span class="highlight">Операции</span> бывают <span class="highlight">унарными</span> (выполняются над одним операндом), <span class="highlight">бинарными</span> (выполняются над двумя операндами) и <span class="highlight">тернарными</span> (выполняются над тремя операндами). Далее представлены все виды операций:</p>
+                <p class="descrip"><span class="highlight">Бинарные</span> арифметические операции:</p>
+                <ul>
+                    <li class="descrip-li-sign"><b class="signs">+</b><p class="paragraph"><span class="highlight">Операция сложения</span> двух чисел:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> x = 20; <br><span class="keywords">int</span> z = x + 12;  <span class="comments">// 32</span></code></pre></li>
+                    <li class="descrip-li-sign"><b class="signs">-</b><p class="paragraph"><span class="highlight">Операция вычитания</span> двух чисел:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> x = 20; <br><span class="keywords">int</span> z = x - 15;  <span class="comments">// 5</span></code></pre></li>
+                    <li class="descrip-li-sign"><b class="signs">*</b><p class="paragraph"><span class="highlight">Операция умножения</span> двух чисел:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> x = 20; <br><span class="keywords">int</span> z = x * 5;  <span class="comments">// 100</span></code></pre></li>
+                    <li class="descrip-li-sign"><b class="signs">/</b><p class="paragraph"><span class="highlight">Операция деления</span> двух чисел:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> x = 20; <br><span class="keywords">int</span> z = x / 5;  <span class="comments">// 4</span><br><br><span class="keywords">double</span> a = 10; <br><span class="keywords">double</span> b = 3;<br><span class="keywords">double</span> c = a / b; <span class="comments">// 3.33333333</span> </code></pre>
+                        <p class="paragraph">При делении стоит учитывать, что если оба операнда представляют целые числа, то результат также будет округляться до целого числа:</p>
+                        <pre class="example-code"><code><span class="keywords">double</span> z = 10 / 4;  <span class="comments">// результат равен 2</span></code></pre>
+                        <p class="paragraph">Несмотря на то, что результат операции в итоге помещается в переменную типа <span class="highlight">double</span>, которая позволяет сохранить дробную часть, но в самой операции участвуют два литерала, которые по умолчанию рассматриваются как объекты <span class="highlight">int</span> (целые числа), поэтому результат тоже будет целочисленный.</p>
+                        <p class="paragraph">Для выхода из этой ситуации необходимо определять литералы или переменные, участвующие в операции, именно как типы <span class="highlight">double</span> или <span class="highlight">float</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">double</span> z = 10.0 / 4.0;  <span class="comments">// результат равен 2.5</span></code></pre></li>
+                    <li class="descrip-li-sign"><b class="signs">%</b><p class="paragraph"><span class="highlight">Операция получения остатка</span> от целочисленного деления двух чисел:</p>
+                        <pre class="example-code"><code><span class="keywords">double</span> z = 10.0;<br><span class="keywords">double</span> z = x % 4.0;  <span class="comments">// результат равен 2</span></code></pre></li>   
+                </ul>
+                <p class="descrip">Также есть ряд <span class="highlight">унарных операций</span>, в которых принимает участие один операнд:</p>
+                <ul>
+                    <li class="descrip-li-sign"><b class="signs">++</b><p class="paragraph"><span class="highlight">Операция инкремента</span></p>
+                        <p class="paragraph"><span class="highlight">Инкремент</span> бывает <span class="highlight">префиксным</span>: ++x - сначала значение переменной <span class="highlight">x</span> увеличивается на 1, а потом её значение возвращается в качестве результата операции.</p>
+                        <p class="paragraph">И также существует <span class="highlight">постфиксный инкремент</span>: x++ - сначала значение переменной <span class="highlight">x</span> возвращается в качестве результата операции, а затем к нему прибавляется 1.</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> x1 = 5;<br><span class="keywords">int</span> z1 = ++x1;  <span class="comments">// z1 = 6; x1 = 6</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"</span>{x1} - {z1}<span class="string-code">"</span>);  <span class="comments">// 6 - 6</span><br><br><span class="keywords">int</span> x2 = 5;<br><span class="keywords">int</span> z2 = x2++;  <span class="comments">// z2 = 5; x2 = 6</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"</span>{x2} - {z2}<span class="string-code">"</span>);  <span class="comments">// 6 - 5</span></code></pre></li>
+                    <li class="descrip-li-sign"><b class="signs">--</b><p class="paragraph"><span class="highlight">Операция декремента</span> или уменьшения значения на единицу. Также существует <span class="highlight">префиксная форма</span> декремента (--x) и <span class="highlight">постфиксная</span> (x--).</p>               
+                        <pre class="example-code"><code><span class="keywords">int</span> x1 = 5;<br><span class="keywords">int</span> z1 = --x1;  <span class="comments">// z1 = 4; x1 = 4</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"</span>{x1} - {z1}<span class="string-code">"</span>);  <span class="comments">// 4 - 4</span><br><br><span class="keywords">int</span> x2 = 5;<br><span class="keywords">int</span> z2 = x2--;  <span class="comments">// z2 = 5; x2 = 4</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"</span>{x2} - {z2}<span class="string-code">"</span>);  <span class="comments">// 4 - 5</span></code></pre></li>
+                </ul>
+                <p class="descrip">При выполнении сразу нескольких арифметических операций следует учитывать порядок их выполнения. Приоритет операций от наивысшего к низшему:</p>
+                <ol>
+                    <li class="descrip-li">Инкремент, декремент;</li>
+                    <li class="descrip-li">Умножение, деление, получение остатка;</li>
+                    <li class="descrip-li">Сложение, вычитание.</li>
+                </ol>
+                <p class="descrip">Для изменения порядка следования операций применяются <span class="highlight">скобки</span>.</p>    
+                <p class="descrip">Далее рассмотрен следующий набор операций:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a = 3;<br><span class="keywords">int</span> b = 5;<br><span class="keywords">int</span> c = 40;<br><span class="keywords">int</span> d = c-- -b * a;  <span class="comments">// a = 3,  b = 5,  c = 39,  d = 25</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"a =</span> {a}  <span class="string-code">b =</span> {b}  <span class="string-code">c =</span> {c}  <span class="string-code">d =</span> {d}<span class="string-code">"</span>);</code></pre>
+                <p class="descrip">В данном программном коде выполняются три вида арифметических операций: декремент, вычитание и умножение. Сначала выполняется декремент переменной c, затем умножение b * a, и в конце вычитание. Фактически набор операций выглядит следующим образом:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> d = (c--) - (b * a);</code></pre>
+                <p class="descrip">Изменить порядок операций можно с помощью скобок, например, следующим образом:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a = 3;<br><span class="keywords">int</span> b = 5;<br><span class="keywords">int</span> c = 40;<br><span class="keywords">int</span> d = (c - (--b)) * a;  <span class="comments">// a = 3,  b = 4,  c = 40,  d = 108</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"a =</span> {a}  <span class="string-code">b =</span> {b}  <span class="string-code">c =</span> {c}  <span class="string-code">d =</span> {d}<span class="string-code">"</span>);</code></pre>
+                <p class="heading">Ассоциативность операторов</p>
+                <p class="descrip">Как было отмечено ранее, операции умножения и деления имеют один и тот же приоритет, но возникает вопрос, каким будет результат в следующем выражении:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> x = 10 / 5 * 2;</code></pre>
+                <p class="descrip">Как необходимо трактовать данное выражение - как (10 / 5) * 2 или как 10 / (5 * 2) ? Ведь в зависимости от трактовки результаты получатся разными.</p>
+                <p class="descrip">Когда операции имеют один и тот же приоритет, порядок вычисления определяется <span class="highlight">ассоциативностью</span> операторов. В зависимости от <span class="highlight">ассоциативности</span> существует два типа операторов:</p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Левоассоциативные операторы</span>, которые выполняются слева направо;</li>
+                    <li class="descrip-li"><span class="highlight">Правоассоциативные операторы</span>, которые выполняются справа налево.</li>
+                </ul>
+                <p class="descrip">Все арифметические операторы являются <span class="highlight">левоассоциативными</span>. Поэтому выражение 10 / 5 * 2 необходимо трактовать как (10 / 5) * 2. В данном случае результатом будет число 4.</p>        
+                <p class="heading">Класс Math</p>
+                <p class="descrip">Для выполнения различных математических операций в библиотеке классов <span class="highlight">.NET</span> предназначен класс <span class="highlight">Math</span>.</p>
+                <p class="descrip">Далее перечислены методы класса <span class="highlight">Math:</span></p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Abs(double value):</span> возвращает абсолютное значение для аргумента <span class="highlight">value</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.Abs(-12.4);  <span class="comments">// 12.4</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Acos(double value):</span> возвращает арккосинус <span class="highlight">value</span>. Параметр <span class="highlight">value</span> должен иметь значение от -1 до 1:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.Acos(1);  <span class="comments">// 0</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Asin(double value):</span> возвращает арксинус <span class="highlight">value</span>. Параметр <span class="highlight">value</span> должен иметь значение от -1 до 1;</li>
+                    <li class="descrip-li"><span class="highlight">Atan(double value):</span> возвращает арктангенс <span class="highlight">value</span>;</li>
+                    <li class="descrip-li"><span class="highlight">BigMul(int x, int y):</span> возвращает произведение чисел <span class="highlight">x</span> и <span class="highlight">y</span> в виде объекта <span class="highlight">long</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.BigMul(100, 9340); <span class="comments">// 934000</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Ceiling(double value):</span> возвращает наименьшее целое число с плавающей точкой, которое не меньше <span class="highlight">value</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.Ceiling(2.34);  <span class="comments">// 3</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Cos(double d):</span> возвращает косинус угла <span class="highlight">d</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Cosh(double d):</span> возвращает гиперболический косинус угла <span class="highlight">d</span>;</li>
+                    <li class="descrip-li"><span class="highlight">DivRem(int a, int b, out int result):</span> возвращает результат от деления <span class="highlight">a</span> на <span class="highlight">b</span>, а остаток помещается в параметр <span class="highlight">result</span>:
+                        <pre class="example-code"><code><span class="keywords">int</span> result;<br><span class="keywords">int</span> div = <span class="keywords-light">Math</span>.DivRem(14, 5, <span class="keywords">out</span> result);  <span class="comments">// result = 4,  div = 2</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Exp(double d):</span> возвращает основание натурального логарифма, возведённое в степень <span class="highlight">d</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Floor(decimal d):</span> возвращает наибольшее целое число, которое не больше <span class="highlight">d</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.Floor(2.56);  <span class="comments">// 2</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">IEEERemainder(double a, double b):</span> возвращает остаток от деления <span class="highlight">a</span> на <span class="highlight">b</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.IEEERemainder(26, 4);  <span class="comments">// 2</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Log(double d):</span> возвращает натуральный логарифм числа <span class="highlight">d</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Log(double a, double newBase):</span> возвращает логарифм числа <span class="highlight">a</span> по основанию <span class="highlight">newBase</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Log10(double d):</span> возвращает десятичный логарифм числа <span class="highlight">d</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Max(double a, double b):</span> возвращает максимальное число из <span class="highlight">a</span> и <span class="highlight">b</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Min(double a, double b):</span> возвращает минимальное число из <span class="highlight">a</span> и <span class="highlight">b</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Pow(double a, double b):</span> возвращает число <span class="highlight">a</span>, возведённое в степень <span class="highlight">b</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Round(double d):</span> возвращает число <span class="highlight">d</span>, округлённое до ближайшего целого числа:
+                        <pre class="example-code"><code><span class="keywords">double</span> result1 = <span class="keywords-light">Math</span>.Round(13.52); <span class="comments">// 14</span><br><span class="keywords">double</span> result2 = <span class="keywords-light">Math</span>.Round(13.47);  <span class="comments">// 14</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Round(double a, round b):</span> возвращает число <span class="highlight">a</span>, округлённое до определённого количества знаков после запятой, представленного параметром <span class="highlight">b</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result1 = <span class="keywords-light">Math</span>.Round(52.836, 2);  <span class="comments">// 52.84</span><br><span class="keywords">double</span> result2 = <span class="keywords-light">Math</span>.Round(45.456, 1);  <span class="comments">// 45,5</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Sign(double value):</span> возвращает 1, если число <span class="highlight">value</span> положительное, и -1, если значение <span class="highlight">value</span> отрицательное. Если <span class="highlight">value</span> равно 0, то возвращает 0:
+                        <pre class="example-code"><code><span class="keywords">int</span> result1 = <span class="keywords-light">Math</span>.Sign(7);  <span class="comments">// 1</span><br><span class="keywords">int</span> result2 = <span class="keywords-light">Math</span>.Sign(-3);  <span class="comments">// -1</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Sin(double value):</span> возвращает синус угла <span class="highlight">value</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Sinh(double value):</span> возвращает гиперболический синус угла <span class="highlight">value</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Sqrt(double value):</span> возвращает квадратный корень числа <span class="highlight">value</span>:
+                        <pre class="example-code"><code><span class="keywords">double</span> result1 = <span class="keywords-light">Math</span>.Sqrt(25);  <span class="comments">// 5</span></code></pre></li>
+                    <li class="descrip-li"><span class="highlight">Tan(double value):</span> возвращает тангенс угла <span class="highlight">value</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Tanh(double value):</span> возвращает гиперболический тангенс угла <span class="highlight">value</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Truncate(double value):</span> отбрасывает дробную часть числа <span class="highlight">value</span>, возвращая лишь целое значение:
+                        <pre class="example-code"><code><span class="keywords">double</span> result = <span class="keywords-light">Math</span>.Truncate(37.98);  <span class="comments">// 37</span></code></pre></li>
+                </ul>
+                <p class="descrip">Также класс <span class="highlight">Math</span> определяет две константы: <span class="highlight">Math.E</span> и <span class="highlight">Math.PI</span>. Далее приведён пример программы, вычисляющей площадь круга:</p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите радиус круга (в см): "</span>);<br><span class="keywords">double</span> r = <span class="keywords-light">Double</span>.Parse(<span class="keywords-light">Console</span>.ReadLine());<br><span class="keywords">double</span> s = <span class="keywords-light">Math</span>.PI * <span class="keywords-light">Math</span>.Pow(r, 2);<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Площадь круга с радиусом "</span> + r + <span class="string-code">" см равна "</span> + <span class="keywords-light">Math</span>.Round(s, 2) + <span class="string-code">" см^2"</span>);</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите радиус круга (в см):<br>4,5<br>Площадь круга с радиусом 4,5 см равна 63,62 см^2</code></pre>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/arithmetic.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Арифметические операции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Арифметические операции</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Определить стоимость покупки: m кг сахара по x руб. за 1 кг, n кг муки по y руб. за 1 кг и d кг риса по z руб. за 1 кг.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите цену сахара за килограмм: "</span>);<br><span class="keywords">double</span> x = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cколько килограмм сахара вы хотите приобрести ? "</span>);<br><span class="keywords">double</span> m = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите цену муки за килограмм: "</span>);<br><span class="keywords">double</span> y = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cколько килограмм муки вы хотите приобрести ? "</span>);<br><span class="keywords">double</span> n = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите цену риса за килограмм: "</span>);<br><span class="keywords">double</span> z = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Cколько килограмм риса вы хотите приобрести ? "</span>);<br><span class="keywords">double</span> d = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords">double</span> p = x * m + y * n + z * d;<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Общая стоимость покупки составит "</span> + <span class="keywords-light">Math</span>.Round(p, 2) + <span class="string-code">" рублей"</span>);<br><span class="keywords-light">Console</span>.ReadKey();</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите цену сахара за килограмм:<br>90<br>Cколько килограмм сахара вы хотите приобрести ?<br>3<br>Введите цену муки за килограмм:<br>70<br>Cколько килограмм муки вы хотите приобрести ?<br>3<br>Введите цену риса за килограмм:<br>80<br>Cколько килограмм риса вы хотите приобрести ?<br>5<br>Общая стоимость покупки составит 880 рублей</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Вычислить объём и площадь куба по длине стороны.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Вычислить стоимость краски, необходимой для покраски пола в прямоугольном помещении с заданными размерами, если известна стоимость одного литра краски и расход краски на квадратный метр.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Вычислить стоимость поездки на автомобиле на дачу и обратно (расстояние до дачи в км, расход бензина на 100 км пробега и цена одного литра бензина известны).</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Массивы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Массивы</h2>
+                <p class="descrip"><span class="highlight">Массив</span> представляет собой набор однотипных данных. Объявление <span class="highlight">массива</span> похоже на объявление переменной за тем исключением, что после указания типа ставятся квадратные скобки:</p>
+                <pre class="example-code"><code>тип_переменной[] название_массива;</code></pre>
+                <p class="descrip">Ниже представлено определение <span class="highlight">массива целых чисел</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers;</code></pre>
+                <p class="descrip">После определения переменной <span class="highlight">массива</span> ей можно присвоить определённое значение:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] nums = <span class="keywords">new int</span>[4];</code></pre>
+                <p class="descrip">В данном программном коде вначале был объявлён <span class="highlight">массив nums</span>, который будет хранить данные типа <span class="highlight">int</span>. Далее, используя операцию <span class="highlight">new</span>, была выделена память для 4 элементов <span class="highlight">массива</span>: <span class="highlight">new int[4]</span>. Число 4 ещё называется <span class="highlight">длиной массива</span>. При таком определении все элементы получают значение по умолчанию, которое предусмотренно для их типа. Для типа <span class="highlight">int</span> значение по умолчанию - 0.</p>
+                <p class="descrip">Также можно сразу указать значения для этих элементов:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] nums2 = <span class="keywords">new int</span>[4] { 1, 2, 3, 5 };<br><span class="keywords">int</span>[] nums3 = <span class="keywords">new int</span>[] { 1, 2, 3, 5 };<br><span class="keywords">int</span>[] nums4 = <span class="keywords">new</span> [] { 1, 2, 3, 5 };<br><span class="keywords">int</span>[] nums5 = <span class="keywords">new int</span>[4] { 1, 2, 3, 5 };</code></pre>
+                <p class="descrip">Все вышеперечисленные способы будут равноценны.</p>
+                <p class="descrip">Для обращения к элементам <span class="highlight">массива</span> используются <span class="highlight">индексы</span>. <span class="highlight">Индекс</span> представляет собой номер элемента в <span class="highlight">массиве</span>, при этом нумерация начинается с нуля, поэтому <span class="highlight">индекс</span> первого элемента будет равен 0. А чтобы обратиться к четвёртому элементу в <span class="highlight">массиве</span>, необходимо использовать индекс 3, к примеру: <span class="highlight">nums[3]</span>. Далее индексы будут использоваться для получения и установки значений элементов <span class="highlight">массива</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] nums = <span class="keywords">new int</span>[4];<br></code></pre>
+                <p class="heading">Многомерные массивы</p>
+                <p class="descrip"><span class="highlight">Массивы</span> характеризуются таким понятием как <span class="highlight">ранг</span> или <span class="highlight">количество измерений</span>. Выше были рассмотрены <span class="highlight">массивы</span>, которые имеют <span class="highlight">одно измерение</span> (их <span class="highlight">ранг равен 1</span>) - такие <span class="highlight">массивы</span> можно представлять в виде <span class="highlight">горзонтального ряда элементов</span>. Но <span class="highlight">массивы</span> также бывают <span class="highlight">многомерными</span>. У таких <span class="highlight">массивов</span> количество измерений (<span class="highlight">ранг</span>) <span class="highlight">больше 1.</span></p>
+                <p class="descrip"><span class="highlight">Массивы</span>, которые имеют <span class="highlight">два измерения (ранг равен 2)</span> называют <span class="highlight">двумерными</span>. Далее представлены <span class="highlight">одномерный</span> и <span class="highlight">двухмерный массивы</span>, которые имеют одинаковые элементы:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] nums1 = <span class="keywords">new int</span>[] { 0, 1, 2, 3, 4, 5 };<br><br><span class="keywords">int</span>[,] nums2 = <span class="keywords">new int</span>[] { { 0, 1, 2 }, { 3, 4, 5 } };</code></pre>
+                <p class="descrip">Визуально оба <span class="highlight">массива</span> можно представить следующим образом:</p>
+                <p class="descrip"><span class="highlight">Одномерный массив nums1:</span></p>
+                <table cellpadding="4"><tbody><tr><td><p>0</p></td><td><p>1</p></td><td><p>2</p></td><td><p>3</p></td><td><p>4</p></td><td><p>5</p></td></tr></tbody></table>
+                <p class="descrip"><span class="highlight">Двумерный массив nums2:</span></p>
+                <table cellpadding="4"><tbody><tr><td><p>0</p></td><td><p>1</p></td><td><p>2</p></td></tr><tr><td><p>3</p></td><td><p>4</p></td><td><p>5</p></td></tr></tbody></table>
+                <p class="descrip">Поскольку <span class="highlight">массив nums2 двумерный</span>, он представляет собой простую таблицу. Далее представлены все возможные способы определения <span class="highlight">двумерных массивов:</span></p>
+                <pre class="example-code"><code><span class="keywords">int</span>[,] nums1;<br><span class="keywords">int</span>[,] nums2 = <span class="keywords">new int</span>[2, 3];<br><span class="keywords">int</span>[,] nums3 = <span class="keywords">new int</span>[2, 3] { { 0, 1, 2 }, { 3, 4, 5 } };<br><span class="keywords">int</span>[,] nums4 = <span class="keywords">new int</span>[,] { { 0, 1, 2 }, { 3, 4, 5 } };<br><span class="keywords">int</span>[,] nums5 = <span class="keywords">new</span> [,]{ { 0, 1, 2 }, { 3, 4, 5 } };<br><span class="keywords">int</span>[,] nums6 = { { 0, 1, 2 }, { 3, 4, 5 } };</code></pre>
+                <p class="descrip"><span class="highlight">Массивы</span> могут иметь и большее количество <span class="highlight">измерений</span>. Далее представлено объявление <span class="highlight">трёхмерного массива:</span></p>
+                <pre class="example-code"><code><span class="keywords">int</span>[,,] nums3 = <span class="keywords">new int</span>[2, 3, 4];</code></pre>
+                <p class="descrip">Соответственно могут быть и <span class="highlight">четырёхмерные массивы</span> и <span class="highlight">массивы</span> с большим количеством измерений. Но на практике обычно используются <span class="highlight">одномерные</span> и <span class="highlight">двумерные массивы</span>.</p>
+                <p class="descrip">Определённую сложность может представлять перебор <span class="highlight">многомерного массива</span>. Прежде всего необходимо учитывать, что <span class="highlight">длина такого массива</span> - это совокупное количество его элементов.</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[,] mas ={ { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };<br><span class="keywords">foreach</span> (<span class="keywords">int</span> i <span class="keywords">in</span> mas)<br>   <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{i} <span class="string-code">"</span>);</code></pre>
+                <p class="descrip">В данном случае <span class="highlight">длина массива mas</span> равна <span class="highlight">12</span>. И цикл <span class="highlight">foreach</span> выводит все элементы <span class="highlight">массива</span> в строку:</p>
+                <pre class="example-code console"><code>1 2 3 4 5 6 7 8 9 10 11 12</code></pre>
+                <p class="descrip">Но что, если необходимо отдельно пробежаться по каждой строке в таблице? В этом случае необходимо получить количество элементов в размерности. В частности, у каждого <span class="highlight">массива</span> есть метод <span class="highlight">GetUpperBound(dimension)</span>, который возвращает индекс последнего элемента в определённой размерности. С помощью выражения <span class="highlight">mas.GetUpperBound(0) + 1</span> можно получить количество строк таблицы, представленной <span class="highlight">двумерным массивом</span>. А с помощью выражения <span class="highlight">mas.Length / rows</span> можно получить количество элементов в каждой строке:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[,] mas ={ { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };<br><br><span class="keywords">int</span> rows = mas.GetUpperBound(0) + 1;<br><span class="keywords">int</span> columns = mas.Length / rows;  <span class="comments">// или int columns = mas.GetUpperBound(1) + 1;</span><br><br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; rows; i++)<br>{<br>   <span class="keywords">for</span> (<span class="keywords">int</span> j = 0; j &lt; columns; j++)<br>   {<br>      <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{mas[i, j]} <span class="lilac">\t</span><span class="string-code">"</span>);<br>   }<br>   <span class="keywords-light">Console</span>.WriteLine();<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>1     2     3     4<br>5     6     7     8<br>9     10    11    12</code></pre>
+                <p class="heading">Массив массивов</p>
+                <p class="descrip">От <span class="highlight">многомерных массивов</span> следует отличать <span class="highlight">массив массивов</span> или так называемый <span class="highlight">«зубчатый массив»:</span></p>
+                <pre class="example-code"><code><span class="keywords">int</span>[][] nums = <span class="keywords">new int</span>[3][];<br>nums[0] = <span class="keywords">new int</span>[2] { 1, 2 };  <span class="comments">// выделена память для первого подмассива</span><br>nums[1] = <span class="keywords">new int</span>[3] { 1, 2, 3 };  <span class="comments">// выделена память для второго подмассива</span><br>nums[2] = <span class="keywords">new int</span>[5] { 1, 2, 3, 4, 5 };  <span class="comments">// выделена память для третьего подмассива</span></code></pre>
+                <p class="descrip">Две группы квадратных скобок указывают, что это <span class="highlight">массив массивов</span> - <span class="highlight">массив</span>, который, в свою очередь, содержит в себе другие <span class="highlight">массивы</span>. Причём <span class="highlight">длина массива</span> указывается только в первых квадратных скобках, все последующие квадратные скобки должны быть пусты: <span class="highlight">new int[3][]</span>. В данном случае <span class="highlight">массив nums</span> содержит <span class="highlight">три массива</span>. Причём размерность каждого из этих <span class="highlight">массивов</span> может не совпадать.</p>
+                <p class="descrip"><span class="highlight">Зубчатый массив nums:</span></p>
+                <table cellpadding="4"><tbody><tr><td><p>1</p></td><td><p>2</p></td></tr><tr><td><p>1</p></td><td><p>2</p></td><td><p>3</p></td></tr><tr><td><p>1</p></td><td><p>2</p></td><td><p>3</p></td><td><p>4</p></td><td><p>5</p></td></tr></tbody></table>
+                <p class="descrip">В качестве <span class="highlight">массивов</span> также могут использоваться <span class="highlight">многомерные массивы:</span></p>
+                <pre class="example-code"><code><span class="keywords">int</span>[][,] nums = <span class="keywords">new int</span>[3][,]<br>{<br>   <span class="keywords">new int</span>[,] { {1,2}, {3,4} },<br>   <span class="keywords">new int</span>[,] { {1,2}, {3,6} },<br>   <span class="keywords">new int</span>[,] { {1,2}, {3,5}, {8, 13} }<br>};</code></pre>
+                <p class="descrip">Выше был описан <span class="highlight">массив</span>, состоящий <span class="highlight">из трёх массивов</span>, причём каждый из этих <span class="highlight">массивов</span> представляет собой <span class="highlight">двухмерный массив</span>.</p>
+                <p class="descrip">Используя вложенные циклы, можно перебирать <span class="highlight">зубчатые массивы</span>. Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[][] numbers = <span class="keywords">new int</span>[3][];<br>numbers[0] = <span class="keywords">new int</span>[] { 1, 2 };<br>numbers[1] = <span class="keywords">new int</span>[] { 1, 2, 3 };<br>numbers[2] = <span class="keywords">new int</span>[] { 1, 2, 3, 4, 5 };<br><span class="keywords">foreach</span>(<span class="keywords">int</span>[] row <span class="keywords">in</span> numbers)<br>{<br>   <span class="keywords">foreach</span>(<span class="keywords">int</span> number <span class="keywords">in</span> row)<br>   {<br>      <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{number} <span class="lilac">\t</span><span class="string-code">"</span>);<br>   }<br>   <span class="keywords-light">Console</span>.WriteLine();<br>}<br><span class="comments">// перебор с помощью цикла for</span><br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; numbers.Length; i++)<br>{<br>   <span class="keywords">for</span> (<span class="keywords">int</span> j = 0; j &lt; numbers[i].Length; j++)<br>   {<br>      <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{numbers[i][j]} <span class="lilac">\t</span><span class="string-code">"</span>);<br>   }<br>   <span class="keywords-light">Console</span>.WriteLine();<br>}</code></pre>                
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>1     2<br>1     2     3<br>1     2     3     4     5<br>1     2<br>1     2     3<br>1     2     3     4     5</code></pre>
+                <p class="heading">Класс Array</p>
+                <p class="descrip">Все <span class="highlight">массивы</span> в <span class="highlight">C#</span> построены на основе класса <span class="highlight">Array</span> из пространства имён <span class="highlight">System</span>. Этот класс определяет ряд <span class="highlight">свойств</span> и <span class="highlight">методов</span>, которые можно использовать при работе с <span class="highlight">массивами</span>. Далее представлены <span class="highlight"> основные свойства и методы массивов:</span></p>
+                <ul>                    
+                    <li class="descrip-li">Свойство <span class="highlight">Length</span> возвращает длину <span class="highlight">массива</span>;</li>
+                    <li class="descrip-li">Свойство <span class="highlight">Rank</span> возвращает размерность <span class="highlight">массива</span>;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">BinarySearch()</span> выполняет бинарный поиск в отсортированном <span class="highlight">массиве</span>;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Clear()</span> очищает <span class="highlight">массив</span>, устанавливая для всех его элементов значение по умолчанию;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Copy()</span> копирует часть одного <span class="highlight">массива</span> в другой <span class="highlight">массив</span>;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Exists()</span> проверяет, содержит ли <span class="highlight">массив</span> определённый элемент;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Find()</span> находит элемент, который удовлетворяет определённому условию;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">FindAll()</span> находит все элементы, которые удовлетворяют определённому условию;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">IndexOf()</span> возвращает индекс элемента;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Resize()</span> изменяет размер <span class="highlight">одномерного массива</span>;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Reverse()</span> располагает элементы <span class="highlight">массива</span> в обратном порядке;</li>
+                    <li class="descrip-li">Статический метод <span class="highlight">Sort()</span> сортирует элементы одномерного <span class="highlight">массива</span>.</li>
+                </ul>
+                <p class="descrip">Далее представлены самые используемые методы.</p>
+                <p class="descrip">Следующий программный код изменяет порядок элементов и размер <span class="highlight">массива</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };<br><span class="keywords-light">Array</span>.Reverse(numbers);  <span class="comments">// располагает элементы массива в обратном порядке</span><br><span class="keywords-light">Array</span>.Resize(<span class="keywords">ref</span> numbers, 4);  <span class="comments">// уменьшает количество элементов в массиве до 4</span><br><br><span class="keywords">foreach</span>(<span class="keywords">int</span> number <span class="keywords">in</span> numbers)<br>{<br>   <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{number} <span class="lilac">\t</span><span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>4     3     2     1</code></pre>
+                <p class="descrip">В функции <span class="highlight">Resize</span> первым параметром является <span class="highlight">изменяемый массив</span>, а вторым - количество элементов, которое должны быть в <span class="highlight">массиве</span>. Если второй параметр меньше <span class="highlight">длины массива</span>, то <span class="highlight">массив</span> усекается. Если значение параметра, наоборот, больше, то <span class="highlight">массив</span> дополняется дополнительными элементами, которые имеют значение по умолчанию.</p>
+                <p class="descrip">Метод <span class="highlight">Copy</span> копирует часть одного <span class="highlight">массива</span> в другой:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = { -4, -3, -2, -1, 0, 1, 2, 3, 4 };<br><span class="keywords">int</span>[] numbers2 = <span class="keywords">new int</span>[5];<br><span class="keywords-light">Array</span>.Copy(numbers, 2, numbers2, 0, 5);<br><span class="comments">// копирование из массива numbers 5-ти элементов, начиная со 2-го индекса<br>и помещение скопированных элементов в массив numbers2, начиная с 0-го индекса</span><br><br><span class="keywords">foreach</span>(<span class="keywords">int</span> number <span class="keywords">in</span> numbers2)<br>{<br>   <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{number} <span class="lilac">\t</span><span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>-2     -1     0     1     2</code></pre>
+                <p class="descrip">Далее представлена <span class="highlight">сортировка массива</span> с помощью метода <span class="highlight">Sort()</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span>[] numbers = { -3, 10, 0, -5, 12, 1, 22, 3};<br><br><span class="keywords-light">Array</span>.Sort(numbers);<br><br><span class="keywords">foreach</span>(<span class="keywords">int</span> number <span class="keywords">in</span> numbers)<br>{<br>   <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{number} <span class="lilac">\t</span><span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>-5      -3     0     1     3     10     12     22</code></pre>
+                <p class="heading">Класс Random</p>
+                <p class="descrip">Очень часто в программах возникает необходимость использования случайных чисел. Для получения последовательности случайных чисел в языке <span class="highlight">C#</span> предназначен класс <span class="highlight">Random</span>. Этот класс предусматривает два конструктора:</p>
+                <ul>                    
+                    <li class="descrip-li"><span class="highlight">Random()</span> - инициализирует экземпляр класса <span class="highlight">Random</span> с помощью начального значения, зависящего от текущего времени. Как известно, время может быть представлено в <span class="highlight">тиках</span> - 100-наносекундных импульсах, начиная с 1 января 0001 года. И значение времени в тиках представляет собой 64-битное целое число, которое и будет использоваться для инициализации экземпляра генератора случайных чисел;</li>
+                    <li class="descrip-li"><span class="highlight">Random(Int32)</span> - инициализирует экземпляр класса <span class="highlight">Random</span> с помощью указанного начального значения. Такая инициализация генератора случайных чисел может быть удобна на этапе отладки программы, поскольку в этом случае при каждом запуске программы будут генерироваться одни и те же «случайные» числа.</li>
+                </ul>
+                <p class="descrip">Основным методом данного класса является метод <span class="highlight">Next()</span>, позволяющий получить случайное число и имеющий ряд перегрузок:</p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Next()</span> - возвращает случайное целое неотрицательное число формата <span class="highlight">Int32</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Next(Int32)</span> - возвращает случайное целое неотрицательное число, которое меньше указанного значения;</li>
+                    <li class="descrip-li"><span class="highlight">Next(Int32 min, Int32 max)</span> - возвращает случайное целое число в указанном диапазоне. При этом должно соблюдаться условие <span class="highlight">min &lt; max</span> (первый аргумент должен быть меньше второго).</li>
+                </ul>
+                <p class="descrip">Далее представлена программа, выводящая 10 случайных целых чисел из диапазона от -50 до 50.</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>   <span class="keywords">class</span> Program<br>   {<br>      <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>      {<br>         <span class="keywords-light">Random</span> rand = <span class="keywords">new</span> <span class="keywords-light">Random</span>();<br>         <span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; 10; i++)<br>             <span class="keywords-light">Console</span>.Write(<span class="string-code">$"</span>{rand.Next(-50, 51)} <span class="lilac">\t</span><span class="string-code">"</span>);<br>          <span class="keywords-light">Console</span>.ReadKey();<br>      }<br>   }<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>19     21     -28     -19     42     -12     -9     26     27     35</code></pre>
+                <p class="descrip">Следующий программный код просит пользователя ввести количество строк и столбцов <span class="highlight">массива</span> и заполняет <span class="highlight">двумерный массив</span> случайными целыми числами из диапазона от -10 до 20.</p>
+                <pre class="example-code"><code><span class="keywords">using</span> System;<br><br><span class="keywords">namespace</span> HelloApp<br>{<br>   <span class="keywords">class</span> Program<br>   {<br>      <span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>      {<br>         <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите количество строк в массиве: "</span>);<br>         <span class="keywords">int</span> x = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br>         <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите количество столбцов в массиве: "</span>);<br>         <span class="keywords">int</span> y = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><br>         <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Двумерный массив A:"</span>);<br>         <span class="keywords">int</span>[,] a = <span class="keywords">new int</span>[x, y];<br>         <span class="keywords-light">Random</span> rnd = <span class="keywords">new</span> <span class="keywords-light">Random</span>();<br>         <span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)<br>         {<br>            <span class="keywords">for</span> (<span class="keywords">int</span> j = 0; j &lt; y; j++)<br>            {<br>               a[i, j] = rnd.Next(-10, 21);<br>               <span class="keywords-light">Console</span>.Write(a[i, j]+ <span class="string-code">"</span><span class="lilac">\t</span><span class="string-code">"</span>);<br>            }<br>            <span class="keywords-light">Console</span>.WriteLine();<br>         }<br>         <span class="keywords-light">Console</span>.ReadKey();<br>      }<br>   }<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите количество строк в массиве:<br>7<br>Введите количество столбцов в массиве:<br>3<br>Двумерный массив A:<br>13      14      10<br>11      20      0<br>-2      8       10<br>2       13      3<br>7       11      17<br>-6      -5      9<br>4       10      -8</code></pre>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/arrays.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

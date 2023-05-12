@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Условные выражения</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Условные выражения</h2>
+                <p class="descrip"><span class="highlight">Условные выражения</span> представляют собой отдельный набор операций. Такие операции возвращают <span class="highlight">логическое значение</span> (значение типа <span class="highlight">bool</span>): <span class="highlight">true</span>, если выражение истинно, и <span class="highlight">false</span>, если выражение ложно. К подобным операциям относятся операции сравнения и логические операции.</p>
+                <p class="heading">Операции сравнения</p>
+                <p class="descrip">В<span class="highlight"> операциях сравнения</span> сравниваются два операнда и возвращается значение типа <span class="highlight">bool - true</span>, если выражение верно, и <span class="highlight">false</span>, если выражение неверно. В языке <span class="highlight">C#</span> существуют следующие <span class="highlight">операции сравнения:</span></p>
+                <ul>
+                    <li class="descrip-li-sign"><span class="highlight">==</span><p class="paragraph"><span class="highlight">Сравнивает два операнда на равенство</span>. Если они равны, то операция возвращает <span class="highlight">true</span>, если не равны, то возвращается <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a == b;  <span class="comments">// false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">!=</span><p class="paragraph"><span class="highlight">Сравнивает два операнда</span> и возвращает <span class="highlight">true</span>, если операнды не равны, и <span class="highlight">false</span>, если они равны:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a != b;  <span class="comments">// true</span><br><span class="keywords">bool</span> d = a != 10;  <span class="comments">// false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">&lt;</span><p class="paragraph"><span class="highlight">Операция «меньше чем»</span>. Возвращает <span class="highlight">true</span>, если первый операнд меньше второго, и <span class="highlight">false</span>, если первый операнд больше второго:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a &lt; b;  <span class="comments">// false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">></span><p class="paragraph"><span class="highlight">Операция «больше чем»</span>. Сравнивает два операнда и возвращает <span class="highlight">true</span>, если первый операнд больше второго, иначе возвращает <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a > b;   <span class="comments">// true</span><br><span class="keywords">bool</span> d = a > 25;  <span class="comments">// false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">&lt;=</span><p class="paragraph"><span class="highlight">Операция «меньше или равно»</span>. Сравнивает два операнда и возвращает <span class="highlight">true</span>, если первый операнд меньше или равен второму. Иначе возвращает <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a &lt;= b;   <span class="comments">// false</span><br><span class="keywords">bool</span> d = a &lt;= 25;  <span class="comments">// true</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">=</span><p class="paragraph"><span class="highlight">Операция «больше или равно»</span>. Сравнивает два операнда и возвращает <span class="highlight">true</span>, если первый операнд больше или равен второму. Иначе возвращает <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">bool</span> c = a >= b;   <span class="comments">// true</span><br><span class="keywords">bool</span> d = a >= 25;  <span class="comments">// false</span></code></pre></li>
+                </ul>
+                <p class="descrip">Операции <span class="highlight">&lt;, > &lt;=, >=</span> имеют больший приоритет, чем <span class="highlight">==</span> и <span class="highlight">!=</span>.</p>
+                <p class="heading">Логические операции</p>
+                <p class="descrip">Также в <span class="highlight">C#</span> определены <span class="highlight">логические операторы</span>, которые также возвращают значение типа <span class="highlight">bool</span>. В качестве операндов они принимают значения типа <span class="highlight">bool</span>. Как правило, применяются к отношениям и объединяют несколько операций сравнения.</p>
+                <p class="descrip">В языке <span class="highlight">C#</span> существуют следующие <span class="highlight">логические операции</span>:</p>
+                <ul>
+                    <li class="descrip-li-sign"><span class="highlight">|</span><p class="paragraph"><span class="highlight">Операция логического сложения</span> или <span class="highlight">логическое ИЛИ</span>. Возвращает <span class="highlight">true</span>, если хотя бы один из операндов возвращает <span class="highlight">true</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> x1 = (5 > 6) | (4 &lt; 6);  <span class="comments">// 5 > 6 - false, 4 &lt; 6 - true, поэтому возвращается true</span><br><span class="keywords">bool</span> x2 = (5 > 6) | (4 > 6);  <span class="comments">// 5 > 6 - false, 4 > 6 - false, поэтому возвращается false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">&</span><p class="paragraph"><span class="highlight">Операция логического умножения</span> или <span class="highlight">логическое И</span>. Возвращает <span class="highlight">true</span>, если оба операнда одновременно равны <span class="highlight">true</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> x1 = (5 > 6) & (4 &lt; 6);  <span class="comments">// 5 > 6 - false, 4 &lt; 6 - true, поэтому возвращается false</span><br><span class="keywords">bool</span> x2 = (5 &lt; 6) & (4 &lt; 6);  <span class="comments">// 5 &lt; 6 - true, 4 &lt; 6 - true, поэтому возвращается true</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">||</span><p class="paragraph"><span class="highlight">Операция логического сложения</span>. Возвращает <span class="highlight">true</span>, если хотя бы один из операндов возвращает <span class="highlight">true</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> x1 = (5 > 6) || (4 &lt; 6);  <span class="comments">// 5 > 6 - false, 4 &lt; 6 - true, поэтому возвращается true</span><br><span class="keywords">bool</span> x2 = (5 > 6) || (4 > 6);  <span class="comments">// 5 > 6 - false, 4 > 6 - false, поэтому возвращается false</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">&&</span><p class="paragraph"><span class="highlight">Операция логического умножения</span>. Возвращает <span class="highlight">true</span>, если оба операнда одновременно равны <span class="highlight">true</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> x1 = (5 > 6) && (4 &lt; 6);  <span class="comments">// 5 > 6 - false, 4 &lt; 6 - true, поэтому возвращается false</span><br><span class="keywords">bool</span> x2 = (5 &lt; 6) && (4 &lt; 6)  <span class="comments">// 5 &lt; 6 - true, 4 &lt; 6 - true, поэтому возвращается true</span></code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">!</span><p class="paragraph"><span class="highlight">Операция логического отрицания</span>. Производится над одним операндом и возвращает <span class="highlight">true</span>, если операнд равен <span class="highlight">false</span>. Если операнд равен <span class="highlight">true</span>, то операция возвращает <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> a = <span class="keywords">true</span>;<br><span class="keywords">bool</span> b = !a;   <span class="comments">// false</span> </code></pre></li>
+                    <li class="descrip-li-sign"><span class="highlight">^</span><p class="paragraph"><span class="highlight">Операция исключающего ИЛИ</span>. Возвращает <span class="highlight">true</span>, если либо первый, либо второй операнд (но не одновременно) равны <span class="highlight">true</span>, иначе возвращает <span class="highlight">false</span>:</p>
+                        <pre class="example-code"><code><span class="keywords">bool</span> x1 = (5 > 6) ^ (4 &lt; 6);  <span class="comments">// 5 > 6 - false, 4 &lt; 6 - true, поэтому возвращается true</span><br><span class="keywords">bool</span> x2 = (50 > 6) ^ (4 / 2 &lt; 3);  <span class="comments">// 50 > 6 - true, 4/2 &lt; 3 - true, поэтому возвращается false</span></code></pre></li>
+                </ul>
+                <p class="descrip">В данном программном коде две пары операций <span class="highlight">| и ||</span> (а также <span class="highlight">& и &&</span>) выполняют похожие действия, однако же они не равнозначны.</p>
+                <p class="descrip">В выражении <span class="highlight">z = x | y</span>; будут вычисляться оба значения - <span class="highlight">x</span> и <span class="highlight">y</span>.</p>
+                <p class="descrip">В выражении <span class="highlight">z = x || y</span>; сначала будет вычисляться значение <span class="highlight">x</span>, и если оно равно <span class="highlight">true</span>, то вычисление значения <span class="highlight">y</span> уже не имеет смысла, так как <span class="highlight">z</span> в любом случае будет равно <span class="highlight">true</span>. Значение <span class="highlight">y</span> будет вычисляться только в том случае, если <span class="highlight">x</span> равен <span class="highlight">false</span>.</p>
+                <p class="descrip">В выражении <span class="highlight">z = x && y</span>; сначала будет вычисляться значение <span class="highlight">x</span>, и если оно равно <span class="highlight">false</span>, то вычисление значения <span class="highlight">y</span> уже не имеет смысла, так как <span class="highlight">z</span> в любом случае будет равно <span class="highlight">false</span>. Значение <span class="highlight">y</span> будет вычисляться только в том случае, если <span class="highlight">x</span> равен <span class="highlight">true</span>.</p> 
+                <p class="descrip">Поэтому операции <span class="highlight">||</span> и <span class="highlight">&&</span> более удобны в вычислениях, так как позволяют сократить время на вычисление значения выражения, и тем самым повышают производительность. А операции <span class="highlight">|</span> и <span class="highlight">&</span> больше подходят для выполнения поразрядных операций над числами.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

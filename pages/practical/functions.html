@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Рекурсивные функции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Рекурсивные функции</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Дано натуральное число N. Вычислите сумму его цифр. Использовать рекурсивную функцию.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="comments">// блок определения рекурсивной функции</span><br><span class="keywords">static int</span> summatsifr(<span class="keywords">int</span> n)
+{
+    <span class="keywords">if</span> (n &lt; 10)
+    {
+        <span class="keywords">return</span> n;
+    }
+    <span class="keywords">else</span>
+    {
+        <span class="keywords">return</span> n % 10 + summatsifr(n / 10);
+    }
+}
+      
+<span class="comments">// блок основной программы</span>
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите натуральное число: "</span>);
+<span class="keywords">int</span> x = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());
+<span class="keywords">int</span> sum = summatsifr(x);
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Сумма цифр числа "</span> + x + <span class="string-code">" равна "</span> + sum);
+</code></pre>
+                    <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                    <pre class="example-code console"><code>Введите натуральное число:<br>2021<br>Сумма цифр числа 2021 равна 5</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Дано натуральное число n. Вывеcти все числа от 1 до n. Использовать рекурсивную функцию.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Разработать рекурсивную функцию, которая вычисляет, какой степенью числа 5 является натуральное число N. Если N не является степенью числа 5, функция должна вернуть число -1.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Разработать рекурсивную функцию вычисления суммы ряда S = 10 + 20 + 30 + ... + 10*n.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

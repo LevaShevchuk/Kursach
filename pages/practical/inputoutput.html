@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Консольный ввод-вывод</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Консольный ввод-вывод</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Разработать программу вывода на экран в одну строку четырёх чисел, введённых пользователем с клавиатуры, с одним пробелом между ними.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите первое число: "</span>);<br><span class="keywords">double</span> a = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите второе число: "</span>);<br><span class="keywords">double</span> b = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите третье число: "</span>);<br><span class="keywords">double</span> c = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите четвёртое число: "</span>);<br><span class="keywords">double</span> d = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введённые Вами числа: "</span>);<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"</span>{a} {b} {c} {d}<span class="string-code">"</span>);<br><span class="keywords-light">Console</span>.ReadKey();<br></code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите первое число:<br>9<br>Введите второе число:<br>14<br>Введите третье число:<br>14,9<br>Введите четвёртое число:<br>9,14<br>Введённые Вами числа:<br>9 14 14,9 9,14</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Разработать программу вывода на экран числа, вводимого пользователем с клавиатуры. Выводимому числу должно предшествовать сообщение «Вы ввели число».</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Разработать программу вывода на одной строке трёх чисел, введённых пользователем с клавиатуры.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Разработать программу вывода на экран «столбиком» четырёх слов, введённых пользователем с клавиатуры.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

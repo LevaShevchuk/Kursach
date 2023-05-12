@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Операции присваивания</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Операции присваивания</h2>
+                <p class="descrip">В <span class="highlight">операциях присваивания</span> участвуют <span class="highlight">два операнда</span>, причём <span class="highlight">левый операнд</span> может представлять только модифицируемое именованное выражение, например, <span class="highlight">переменную</span>.</p>
+                <p class="descrip">Как и во многих других языках программирования, в <span class="highlight">C#</span> имеется <span class="highlight">базовая операция присваивания =</span>, которая присваивает значение правого операнда левому операнду:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> number = 23;</code></pre>
+                <p class="descrip">В данном примере переменной <span class="highlight">number</span> присваивается число <span class="highlight">23</span>. Переменная <span class="highlight">number</span> представляет <span class="highlight">левый операнд</span>, которому присваивается <span class="highlight">значение правого операнда</span> (числа <span class="highlight">23</span>).</p>
+                <p class="descrip">Также можно присвоить значение сразу нескольким переменным одновременно:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a, b, c;<br>a = b = c = 34;</code></pre>
+                <p class="descrip">Стоит отметить, что <span class="highlight">операции присваивания</span> имеют низкий приоритет. Вначале будет вычисляться значение правого операнда и только потом будет идти присваивание этого значения левому операнду. Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a, b, c;<br>a = b = c = 34 * 2 / 4; <span class="comments">// 17</span></code></pre>
+                <p class="descrip">Кроме базовой операции присваивания в <span class="highlight">C#</span> есть ещё ряд операций:</p>
+                <ul>
+                    <li class="descrip-li-sign"><b class="signs">+=:</b><p class="paragraph"><span class="highlight">Присваивание после сложения</span>. Присваивает левому операнду сумму левого и правого операндов: выражение <span class="highlight">A += B</span> равнозначно выражению <span class="highlight">A = A + B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">-=:</b><p class="paragraph"><span class="highlight">Присваивание после вычитания</span>. Присваивает левому операнду разность левого и правого операндов: <span class="highlight">A -= B</span> эквивалентно <span class="highlight">A = A - B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">*=:</b><p class="paragraph"><span class="highlight">Присваивание после умножения</span>. Присваивает левому операнду произведение левого и правого операндов: <span class="highlight">А*= B</span> эквивалентно <span class="highlight">A = A * B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">/=:</b><p class="paragraph"><span class="highlight">Присваивание после деления</span>. Присваивает левому операнду частное левого и правого операндов: <span class="highlight">A /= B</span> эквивалентно <span class="highlight">A = A / B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">%=:</b><p class="paragraph"><span class="highlight">Присваивание после деления по модулю</span>. Присваивает левому операнду остаток от целочисленного деления левого операнда на правый: <span class="highlight">A %= B</span> эквивалентно <span class="highlight">A = A % B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">&=:</b><p class="paragraph"><span class="highlight">Присваивание после поразрядной конъюнкции</span>. Присваивает левому операнду результат поразрядной конъюнкции его битового представления с битовым представлением правого операнда: <span class="highlight">A &= B</span> эквивалентно <span class="highlight">A = A & B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">|=:</b><p class="paragraph"><span class="highlight">Присваивание после поразрядной дизъюнкции</span>. Присваивает левому операнду результат поразрядной дизъюнкции его битового представления с битовым представлением правого операнда: <span class="highlight">A |= B</span> эквивалентно <span class="highlight">A = A | B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">^=:</b><p class="paragraph"><span class="highlight">Присваивание после операции исключающего ИЛИ</span>. Присваивает левому операнду результат операции исключающего ИЛИ его битового представления с битовым представлением правого операнда: <span class="highlight">A ^= B</span> эквивалентно <span class="highlight">A = A ^ B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">&lt;&lt;=:</b><p class="paragraph"><span class="highlight">Присваивание после сдвига разрядов влево</span>. Присваивает левому операнду результат сдвига его битового представления влево на определённое количество разрядов, равное значению правого операнда: <span class="highlight">A &lt;&lt;= B</span> эквивалентно <span class="highlight">A = A &lt;&lt; B</span>;</p></li>
+                    <li class="descrip-li-sign"><b class="signs">>>=:</b><p class="paragraph"><span class="highlight">Присваивание после сдвига разрядов вправо</span>. Присваивает левому операнду результат сдвига его битового представления вправо на определённое количество разрядов, равное значению правого операнда: <span class="highlight">A >>= B</span> эквивалентно <span class="highlight">A = A >> B</span>.</p></li>
+                </ul>
+                <p class="descrip">Применение операций присваивания:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a = 10; <br>a += 10;   <span class="comments">// 20</span><br>a -= 4;   <span class="comments">// 16</span><br>a *= 2;   <span class="comments">// 32</span><br>a /= 8;   <span class="comments">// 4</span><br>a &lt;&lt;= 4;  <span class="comments">// 64</span><br>a >>= 2;  <span class="comments">// 16</span></code></pre>
+                <p class="descrip">Операции присваивания являются <span class="highlight">правоассоциативными</span>, они выполняются <span class="highlight">справа налево</span>. Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> a = 8; <br><span class="keywords">int</span> b = 4;<br><span class="keywords">int</span> c = a += b -= 5;   <span class="comments">// 9</span></code></pre>
+                <p class="descrip">В данном случае выполнение выражения будет идти следующим образом:</p>
+                <ol class="descrip-li">
+                    <li>b -= 5 (6 - 5 = 1)</li>
+                    <li>a += (b -= 5) (8 + 1 = 9)</li>
+                    <li>c = (a += (b -=5 )) (c = 9)</li>
+                </ol>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

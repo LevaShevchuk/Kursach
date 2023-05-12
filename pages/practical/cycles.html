@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Циклы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Циклы</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Процентная ставка по вкладу — 15% годовых. Первоначальный вклад составил А р. Выведите на экран, через сколько лет он станет больше В р.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите сумму первоначального вклада в рублях: "</span>);<br><span class="keywords">double</span> a = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите конечную сумму вклада: "</span>);<br><span class="keywords">double</span> b = <span class="keywords-light">Convert</span>.ToDouble(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords">int</span> k = 0;<br><span class="keywords">double</span> x = a;<br><br><span class="keywords">do</span><br>{<br>   x = x + x * 0.15;<br>   k++;<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Через "</span> + k + <span class="string-code">" год(а)/лет сумма вклада составит "</span> + <span class="keywords-light">Math</span>.Round(x, 2) + <span class="string-code">" рублей"</span>);<br>}<br><span class="keywords">while</span> (x &lt;= b);<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Количество лет, через которое сумма вклада превысит "</span> + b + <span class="string-code">" рублей: "</span> + k);<br><span class="keywords-light">Console</span>.ReadKey();</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите сумму первоначального вклада в рублях:<br>500<br>Введите окончательную сумму вклада:<br>1000<br>Через 1 год(а)/лет сумма вклада составит 575 рублей<br>Через 2 год(а)/лет сумма вклада составит 661,25 рублей<br>Через 3 год(а)/лет сумма вклада составит 760,44 рублей<br>Через 4 год(а)/лет сумма вклада составит 874,5 рублей<br>Через 5 год(а)/лет сумма вклада составит 1005,68 рублей<br>Количество лет, через которое сумма вклада превысит 1000 рублей: 5</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Царевна-лягушка съедает ежедневно на 22 комара больше, чем в предыдущий день. Вычислите, через сколько дней количество съеденных комаров превысит 100, если в первый день съедено 12 комаров.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Вычислить сумму чисел из промежутка от -50 до 100, кратных 5 и меньших 0.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Каждая бактерия делится на две в течение одной минуты. В начальный момент имеется одна бактерия. Выведите на экран, сколько их станет через 15 мин.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

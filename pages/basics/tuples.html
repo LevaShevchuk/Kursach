@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Кортежи</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Кортежи</h2>
+                <p class="descrip"><span class="highlight">Кортежи</span> предоставляют удобный способ для работы с набором значений.</p>
+                <p class="descrip"><span class="highlight">Кортеж</span> представляет собой набор значений, заключённых в круглые скобки:</p>
+                <pre><code class="example-code"><span class="keywords">var</span> tuple = (5, 10);</code></pre>
+                <p class="descrip">В данном случае определён <span class="highlight">кортеж tuple</span>, который имеет два значения: 5 и 10. В дальнейшем можно будет обращаться к каждому из этих значений через поля с названиями <span class="highlight">Item[порядковый_номер_поля_в_кортеже]</span>. Например:</p>
+                <pre><code class="example-code"><span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>{<br>   <span class="keywords">var</span> tuple = (5, 10);<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.Item1);<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.Item2);<br>   tuple.Item1 += 26;<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.Item1);<br>   <span class="keywords-light">Console</span>.ReadKey();<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre><code class="example-code console">5<br>10<br>31</code></pre>
+                <p class="descrip">В данном случае тип определяется неявно. Но также тип для переменной <span class="highlight">кортежа</span> можно указать явным образом:</p>
+                <pre><code class="example-code">(<span class="keywords">int</span>, <span class="keywords">int</span>) <span class="keywords">var</span> tuple = (5, 10);</code></pre>
+                <p class="descrip">Так как <span class="highlight">кортеж</span> содержит два числа, то в определении типа необходимо указать два числовых типа. Далее приведён другой пример определения <span class="highlight">кортежа:</span></p>
+                <pre><code class="example-code">(<span class="keywords">string</span>, <span class="keywords">int</span>, <span class="keywords">double</span>) person = (<span class="string-code">"Лев"</span>, 20, 68.5);</code></pre>
+                <p class="descrip">Первый элемент <span class="highlight">кортежа</span> в данном случае представляет <span class="highlight">строку</span>, второй элемент - тип <span class="highlight">int</span>, а третий - тип <span class="highlight">double</span>.</p>
+                <p class="descrip">Также полям <span class="highlight">кортежа</span> можно давать названия:</p>
+                <pre><code class="example-code"><span class="keywords">var</span> tuple = (count:5, sum:10);<br><span class="keywords-light">Console</span>.WriteLine(tuple.count); <span class="comments">// 5</span><br><span class="keywords-light">Console</span>.WriteLine(tuple.sum);  <span class="comments">// 10</span></code></pre>
+                <p class="descrip">Теперь для того, чтобы обратиться к <span class="highlight">полям кортежа</span>, используются их <span class="highlight">имена</span>, а не названия <span class="highlight">Item1</span> и <span class="highlight">Item2</span>.</p>
+                <p class="descrip">Также можно не использовать переменную для определения <span class="highlight">всего кортежа</span>, а использовать отдельные переменные для его <span class="highlight">полей:</span></p>
+                <pre><code class="example-code"><span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>{<br>   <span class="keywords">var</span> (name, age) = (<span class="string-code">"Лев"</span>, 20);<br>   <span class="keywords-light">Console</span>.WriteLine(name);<br>   <span class="keywords-light">Console</span>.WriteLine(age);<br>   <span class="keywords-light">Console</span>.ReadKey();<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre><code class="example-code console">Лев<br>20</code></pre>
+                <p class="descrip">В этом случае станет возможным работать с <span class="highlight">полями кортежа</span> как с <span class="highlight">переменными</span>, которые определены в рамках метода.</p>
+                <p class="heading">Использование кортежей</p>
+                <p class="descrip"><span class="highlight">Кортежи</span> могут передаваться в качестве параметров в <span class="highlight">метод</span>, могут быть возвращаемым результатом <span class="highlight">функции</span>, либо использоваться иным образом.</p>
+                <p class="descrip">Например, одной из распространённых ситуаций является возвращение из <span class="highlight">функции</span> двух и более значений, в то время как <span class="highlight">функция</span> может возвращать только одно значение. <span class="highlight">Кортежи</span> представляют собой оптимальный способ решения данной задачи:</p>
+                <pre><code class="example-code"><span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>{<br>   <span class="keywords">var</span> tuple = GetValues();<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.Item1);<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.Item2);<br>   <span class="keywords-light">Console</span>.ReadKey();<br>}<br><br><span class="keywords">private static</span> (<span class="keywords">int</span>, <span class="keywords">int</span>) GetValues()<br>{<br>   <span class="keywords">var</span> result = (1, 3);<br>   <span class="keywords">return</span> result;<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre><code class="example-code console">1<br>3</code></pre>
+                <p class="descrip">В данном случае определён <span class="highlight">метод GetValues()</span>, который возвращает <span class="highlight">кортеж</span>. В данном случае возвращается <span class="highlight">кортеж</span> из двух элементов типа <span class="highlight">int</span>, то есть - два целых числа.</p>
+                <p class="descrip">Другой пример:</p>
+                <pre><code class="example-code"><span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>{<br>   <span class="keywords">var</span> tuple = GetNamedValues(<span class="keywords">new int</span>[]{1,2,3,4,5,6,7});<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.count);<br>   <span class="keywords-light">Console</span>.WriteLine(tuple.sum);<br>   <span class="keywords-light">Console</span>.ReadKey();<br>}<br><br><span class="keywords">private static</span> (<span class="keywords">int</span> sum, <span class="keywords">int</span> count) GetNamedValues(<span class="keywords">int</span>[] numbers)<br>{<br>   <span class="keywords">var</span> result = (sum:0, count: 0);<br>   <span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; numbers.Length; i++)<br>   {<br>      result.sum += numbers[i];<br>      result.count++;<br>   }<br>   <span class="keywords">return</span> result;<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre><code class="example-code console">7<br>28</code></pre>
+                <p class="descrip">Также <span class="highlight">кортеж</span> может передаваться в качестве параметра в метод:</p>
+                <pre><code class="example-code"><span class="keywords">static void</span> Main(<span class="keywords">string</span>[] args)<br>{<br>   <span class="keywords">var</span> (name, age) = GetTuple((<span class="string-code">"Лев"</span>, 15), 5);<br>   <span class="keywords-light">Console</span>.WriteLine(name);<br>   <span class="keywords-light">Console</span>.WriteLine(age);<br>   <span class="keywords-light">Console</span>.ReadKey();<br>}<br><br><span class="keywords">private static</span> (<span class="keywords">string</span> name, <span class="keywords">int</span> age) GetTuple((<span class="keywords">string</span> n, <span class="keywords">int</span> a) tuple, <span class="keywords">int</span> x)<br>{<br>   <span class="keywords">var</span> result = (name: tuple.n, age: tuple.a + x);<br>   <span class="keywords">return</span> result;<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre><code class="example-code console">Лев<br>20</code></pre>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

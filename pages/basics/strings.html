@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Работа со строками</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Работа со строками</h2>
+                <p class="descrip">Большое количество задач, которые могут встретиться при разработке приложений, так или иначе связано с обработкой <span class="highlight">строк</span> - парсинг веб-страниц, поиск в тексте, какие-то аналитические задачи, связанные с извлечением нужной информации из текста и т.д.</p>
+                <p class="descrip">В языке <span class="highlight">C# строковые значения</span> представляет тип <span class="highlight">string</span>, а вся функциональность работы с данным типом сосредоточена в классе <span class="highlight">System.String</span>. Собственно <span class="highlight">string</span> является псевдонимом для класса <span class="highlight">System.String</span>. Объекты этого класса представляют текст как последовательность символов <span class="highlight">Unicode</span>. Максимальный размер объекта <span class="highlight">String</span> может составлять в памяти 2 ГБ, или около 1 миллиарда символов.</p>
+                <p class="heading">Создание строк</p>
+                <p class="descrip">Создавать <span class="highlight">строки</span> можно как используя переменную типа <span class="highlight">string</span> и присваивая ей значение, так и применяя один из конструкторов класса <span class="highlight">String</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> s1 = <span class="string-code">"Привет"</span>;<br><span class="keywords">string</span> s2 = <span class="keywords">null</span>;<br><br><span class="keywords">string</span> s3 = <span class="keywords">new</span> String(<span class="string-code">'a'</span>, 6); <span class="comments">  // результатом будет строка "aaaaaa"</span><br><span class="keywords">string</span> s4 = <span class="keywords">new</span> String(<span class="keywords">new char</span>[]{<span class="string-code">'П'</span>, <span class="string-code">'р'</span>, <span class="string-code">'и'</span>, <span class="string-code">'в'</span>, <span class="string-code">'е'</span>, <span class="string-code">'т'</span>});</code></pre>
+                <p class="descrip">Конструктор <span class="highlight">String</span> имеет различное число версий. Так, вызов конструктора new String('a', 6) создаст <span class="highlight">строку</span> "aaaaaa". И так как <span class="highlight">строка</span> представляет собой ссылочный тип, то она может хранить значение <span class="highlight">null</span>.</p>
+                <p class="heading">Строка как набор символов</p>
+                <p class="descrip">Так как <span class="highlight">строка</span> хранит коллекцию символов, в ней определён <span class="highlight">индексатор</span> для доступа к этим символам:</p>
+                <pre class="example-code"><code><span class="keywords">public char this</span>[<span class="keywords">int</span> index] {<span class="keywords">get</span>;}</code></pre>
+                <p class="descrip">Применяя <span class="highlight">индексатор</span>, можно обратиться к <span class="highlight">строке</span> как к массиву символов и получить по индексу любой из её символов:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> s1 = <span class="string-code">"Привет"</span>;<br><span class="keywords">char</span> ch1 = s1[1];<br><span class="keywords-light">Console</span>.WriteLine(ch1);<br><span class="keywords-light">Console</span>.WriteLine(s1.Length);</code></pre>
+                <p class="descrip">Используя свойство <span class="highlight">Length</span>, можно получить <span class="highlight">длину строки</span>.</p>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>р<br>6</code></pre>
+                <p class="heading">Основные методы строк</p>
+                <p class="descrip">Основная функциональность класса <span class="highlight">String</span> раскрывается через его <span class="highlight">методы</span>, среди которых можно выделить следующие:</p>
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Compare:</span> сравнивает две <span class="highlight">строки</span> с учётом текущей культуры (локали) пользователя;</li>
+                    <li class="descrip-li"><span class="highlight">CompareOrdinal:</span> сравнивает две <span class="highlight">строки</span> без учёта локали;</li>
+                    <li class="descrip-li"><span class="highlight">Contains:</span> определяет, содержится ли <span class="highlight">подстрока</span> в <span class="highlight">строке</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Concat:</span> соединяет <span class="highlight">строки</span>;</li>
+                    <li class="descrip-li"><span class="highlight">CopyTo:</span> копирует часть <span class="highlight">строки</span>, начиная с определённого индекса в массив;</li>
+                    <li class="descrip-li"><span class="highlight">EndsWith:</span> определяет, совпадает ли конец <span class="highlight">строки</span> с <span class="highlight">подстрокой</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Format:</span> форматирует <span class="highlight">строку</span>;</li>
+                    <li class="descrip-li"><span class="highlight">IndexOf:</span> находит индекс первого вхождения символа или <span class="highlight">подстроки</span> в <span class="highlight">строке</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Insert:</span> вставляет в <span class="highlight">строку подстроку</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Join:</span> соединяет элементы массива <span class="highlight">строк</span>;</li>
+                    <li class="descrip-li"><span class="highlight">LastIndexOf:</span> находит индекс последнего вхождения символа или <span class="highlight">подстроки</span> в <span class="highlight">строке</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Replace:</span> замещает в <span class="highlight">строке</span> символ или <span class="highlight">подстроку</span> другим символом или <span class="highlight">подстрокой</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Split:</span> разделяет одну <span class="highlight">строку</span> на массив <span class="highlight">строк</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Substring:</span> извлекает из <span class="highlight">строки подстроку</span>, начиная с указанной позиции;</li>
+                    <li class="descrip-li"><span class="highlight">ToLower:</span> переводит все символы <span class="highlight">строки</span> в нижний регистр;</li>
+                    <li class="descrip-li"><span class="highlight">ToUpper:</span>  переводит все символы <span class="highlight">строки</span> в верхний регистр;</li>
+                    <li class="descrip-li"><span class="highlight">Trim:</span> удаляет начальные и конечные пробелы из <span class="highlight">строки</span>.</li>
+                </ul>
+                <p class="descrip">Далее приведены примеры использования данных <span class="highlight">методов</span>.</p>
+                <p class="heading">Конкатенация</p>
+                <p class="descrip"><span class="highlight">Конкатенация строк</span> или <span class="highlight">объединение</span> может производиться как с помощью <span class="highlight">операции сложения</span>, так и с помощью метода <span class="highlight">Concat:</span></p>
+                <pre class="example-code"><code><span class="keywords">string</span> s1 = <span class="string-code">"Привет,"</span>;<br><span class="keywords">string</span> s2 = <span class="string-code">"мир"</span>;<br><span class="keywords">string</span> s3 = s1 + <span class="string-code">" "</span> + s2; <span class="comments">// результат: строка «Привет, мир»</span><br><span class="keywords">string</span> s4 = <span class="keywords-light">String</span>.Concat(s3, <span class="string-code">"!!!"</span>);<br><br><span class="keywords-light">Console</span>.WriteLine(s4);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Привет, мир!!!</code></pre>
+                <p class="descrip">Метод <span class="highlight">Concat</span> является статическим методом класса <span class="highlight">String</span>, принимающим в качестве параметров две <span class="highlight">строки</span>. Также имеются другие версии метода, принимающие другое количество параметров.</p>
+                <p class="descrip">Для <span class="highlight">объединения строк</span> также может использоваться метод <span class="highlight">Join:</span></p>
+                <pre class="example-code"><code><span class="keywords">string</span> s5 = <span class="string-code">"Программировать"</span>;<br><span class="keywords">string</span> s6 = <span class="string-code">"-"</span>;<br><span class="keywords">string</span> s7 = <span class="string-code">"это"</span>;<br><span class="keywords">string</span> s8 = <span class="string-code">"интересно!"</span>;<br><span class="keywords">string</span>[] values = <span class="keywords">new string</span>[] { s5, s6, s7, s8};<br><br><span class="keywords">String</span> s9 = <span class="keywords-light">String</span>.Join(<span class="string-code">" "</span>, values);<br><span class="keywords-light">Console</span>.WriteLine(s9);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Программировать - это интересно!</code></pre>
+                <p class="descrip">Метод <span class="highlight">Join</span> также является статическим. Использованная выше версия метода получает <span class="highlight">два параметра</span>: <span class="highlight">строку-разделитель</span> (в данном случае пробел) и <span class="highlight">массив строк</span>, которые будут соединяться и разделяться разделителем.</p>
+                <p class="heading">Сравнение строк</p>
+                <p class="descrip">Для <span class="highlight">сравнения строк</span> применяется статический метод <span class="highlight">Compare:</span></p>
+                <pre class="example-code"><code><span class="keywords">string</span> s1 = <span class="string-code">"Привет,"</span>;<br><span class="keywords">string</span> s2 = <span class="string-code">"мир!"</span>;<br><br><span class="keywords">int</span> result = <span class="keywords-light">String</span>.Compare(s1, s2);<br><span class="keywords">if</span> (result &lt; 0)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Строка s1 стоит перед строкой s2"</span>);<br>}<br><span class="keywords">else if</span> (result > 0)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Строка s1 стоит после строки s2"</span>);<br>}<br><span class="keywords">else</span><br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Строки s1 и s2 идентичны"</span>);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Строка s1 стоит после строки s2</code></pre>
+                <p class="descrip">Метод <span class="highlight">Compare</span> принимает две <span class="highlight">строки</span> и возвращает число. Если первая <span class="highlight">строка</span> по алфавиту стоит выше второй, то возвращается число, меньше нуля. В противном случае возвращается число, больше нуля. И третий случай - если <span class="highlight">строки</span> равны, то возвращается число 0.</p>
+                <p class="descrip">В данном случае так как символ «П» по алфавиту стоит ниже символа «м», то и первая <span class="highlight">строка</span> будет стоять после второй.</p>
+                <p class="heading">Поиск в строке</p>
+                <p class="descrip">С помощью метода <span class="highlight">IndexOf</span> можно определить <span class="highlight">индекс первого вхождения</span> отдельного символа или <span class="highlight">подстроки</span> в <span class="highlight">строке</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> s1 = <span class="string-code">"Привет, мир!"</span>;<br><span class="keywords">char</span> ch = <span class="string-code">'е'</span>;<br><span class="keywords">int</span> indexOfChar = s1.IndexOf(ch);<br><span class="keywords-light">Console</span>.WriteLine(indexOfChar); <span class="comments">// консоль выведет число 4</span><br><span class="keywords">string</span> subString = <span class="string-code">"мир"</span>;<br><span class="keywords">int</span> indexOfSubstring = s1.IndexOf(subString);<br><span class="keywords-light">Console</span>.WriteLine(indexOfSubstring);  <span class="comments">// консоль выведет число 8</span></code></pre>
+                <p class="descrip">Подобным образом действует метод <span class="highlight">LastIndexOf</span>, только он находит <span class="highlight">индекс последнего вхождения</span> символа или <span class="highlight">подстроки</span> в <span class="highlight">строку</span>.</p>
+                <p class="descrip">Ещё одна группа методов позволяет узнать, начинается или заканчивается ли <span class="highlight">строка</span> на определённую <span class="highlight">подстроку</span>. Для этого предназначены методы <span class="highlight">StartsWith</span> и <span class="highlight">EndsWith</span>. Например, необходимо удалить из папки все файлы с расширением exe:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> path = <span class="string-code">@"C:\SomeDir"</span>;<br><span class="keywords">string</span>[] files = Directory.GetFiles(path);<br><span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt;files.Length; i++)<br>{<br>   <span class="keywords">if</span>(files[i].EndsWith(<span class="string-code">".exe"</span>))<br>      File.Delete(files[i]);<br>}</code></pre>
+                <p class="heading">Разделение строк</p>
+                <p class="descrip">С помощью функции <span class="highlight">Split</span> можно разделить <span class="highlight">строку</span> на массив <span class="highlight">подстрок</span>. В качестве параметра функция <span class="highlight">Split</span> принимает массив символов или <span class="highlight">строк</span>, которые и будут служить разделителями. Следующая программа определяет количество слов в <span class="highlight">строке</span>, разделённых пробельным символом:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">"Программирование — это процесс создания программного обеспечения"</span>;<br><span class="keywords">string</span>[] words = text.Split(<span class="keywords">new char</span>[] { <span class="string-code">' '</span> });<br><span class="keywords">foreach</span> (<span class="keywords">string</span> s <span class="keywords">in</span> words)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(s);<br>}</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Программирование<br>-<br>это<br>процесс<br>создания<br>программного<br>обеспечения</code></pre>
+                <p class="descrip">Это не лучший способ разделения по пробелам, так как во входной <span class="highlight">строке</span> могло содержаться несколько подряд идущих пробелов и в итоговый массив также бы попадали пробелы, поэтому лучше использовать другую версию метода:</p>
+                <pre class="example-code"><code><span class="keywords">string</span>[] words = text.Split(<span class="keywords">new char</span>[] { <span class="string-code">' '</span> }, StringSplitOptions.RemoveEmptyEntries);</code></pre>
+                <p class="descrip">Второй параметр <span class="highlight">StringSplitOptions.RemoveEmptyEntries</span> говорит, что необходимо удалить все пустые <span class="highlight">подстроки</span>.</p>
+                <p class="heading">Обрезка строки</p>
+                <p class="descrip">Для обрезки начальных или концевых символов используется функция <span class="highlight">Trim</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">" Привет, мир! "</span>;<br><br>text = text.Trim(); <span class="comments">// результат "Привет, мир!"</span><br>text = text.Trim(<span class="keywords">new char</span>[] { <span class="string-code">'!'</span>, <span class="string-code">'П'</span> });<br><span class="keywords-light">Console</span>.WriteLine(text);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>ривет, мир</code></pre>
+                <p class="descrip">Функция <span class="highlight">Trim</span> без параметров обрезает начальные и конечные пробелы и возвращает обрезанную <span class="highlight">строку</span>. Для того, чтобы явным образом указать, какие начальные и конечные символы следует обрезать, можно передать в функцию массив этих символов.</p>
+                <p class="descrip">Эта функция имеет частичные аналоги: функция <span class="highlight">TrimStart</span> обрезает начальные символы, а функция <span class="highlight">TrimEnd</span> обрезает конечные символы.</p>
+                <p class="descrip">Обрезать определённую часть <span class="highlight">строки</span> позволяет функция <span class="highlight">Substring</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">"Хороший день"</span>;<br>text = text.Substring(2);<br><span class="keywords-light">Console</span>.WriteLine(text);<br>text = text.Substring(0, text.Length - 2);<br><span class="keywords-light">Console</span>.WriteLine(text);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>роший день<br>роший де</code></pre>
+                <p class="descrip">Функция <span class="highlight">Substring</span> также возвращает обрезанную <span class="highlight">строку</span>. В качестве параметра первая использованная версия применяет индекс, начиная с которого надо обрезать <span class="highlight">строку</span>. Вторая версия применяет два параметра - индекс начала обрезки и длину вырезаемой части <span class="highlight">строки</span>.</p>
+                <p class="heading">Вставка</p>
+                <p class="descrip">Для вставки одной <span class="highlight">строки</span> в другую применяется функция <span class="highlight">Insert</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">"Тёплый день!"</span>;<br><span class="keywords">string</span> subString = <span class="string-code">"и солнечный "</span>;<br>text = text.Insert(7, subString);<br><span class="keywords-light">Console</span>.WriteLine(text);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Тёплый и солнечный день!</code></pre>
+                <p class="descrip">Первым параметром в функции <span class="highlight">Insert</span> является <span class="highlight">индекс</span>, по которому необходимо вставлять <span class="highlight">подстроку</span>, а второй параметр - собственно <span class="highlight">подстрока</span>.</p>
+                <p class="heading">Удаление строк</p>
+                <p class="descrip">Удалить часть <span class="highlight">строки</span> помогает метод <span class="highlight">Remove:</span></p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">"Хороший день"</span>;<br><span class="keywords">int</span> ind = text.Length - 1;   <span class="comments">// индекс последнего символа</span><br>text = text.Remove(ind);   <span class="comments">// вырезка последнего символа</span><br><span class="keywords-light">Console</span>.WriteLine(text);<br>text = text.Remove(0, 2);  <span class="comments">// вырезка первых двух символов</span><br><span class="keywords-light">Console</span>.WriteLine(text);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>Хороший ден<br>роший ден</code></pre>
+                <p class="descrip">Первая версия метода <span class="highlight">Remove</span> принимает индекс в <span class="highlight">строке</span>, начиная с которого надо удалить все символы. Вторая версия принимает ещё один параметр - сколько символов необходимо удалить.</p>
+                <p class="heading">Замена</p>
+                <p class="descrip">Для того, чтобы заменить один символ или <span class="highlight">подстроку</span> на другую, применяется метод <span class="highlight">Replace</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> text = <span class="string-code">"хороший день"</span>;<br>text = text.Replace(<span class="string-code">"хороший"</span>, <span class="string-code">"плохой"</span>);<br><span class="keywords-light">Console</span>.WriteLine(text);<br><br>text = text.Replace(<span class="string-code">"о"</span>, <span class="string-code">""</span>);<br><span class="keywords-light">Console</span>.WriteLine(text);</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>плохой день<br>плхй день</code></pre>
+                <p class="descrip">Во втором случае применения функции <span class="highlight">Replace строка</span> из одного символа "о" заменяется на пустую <span class="highlight">строку</span>. Данная <span class="highlight">строка</span> фактически удаляется из текста. Подобным способом легко удалять какой-то определённый текст в <span class="highlight">строках</span>.</p>    
+                <p class="heading">Смена регистра</p>
+                <p class="descrip">Для приведения <span class="highlight">строки</span> к верхнему и нижнему регистру используются соответственно функции <span class="highlight">ToUpper()</span> и <span class="highlight">ToLower()</span>:</p>
+                <pre class="example-code"><code><span class="keywords">string</span> hello = <span class="string-code">"Привет, мир!"</span>;<br><span class="keywords-light">Console</span>.WriteLine(hello.ToLower());<br><span class="keywords-light">Console</span>.WriteLine(hello.ToUpper());</code></pre>
+                <p class="descrip"><span class="highlight">Консольный вывод:</span></p>
+                <pre class="example-code console"><code>привет, мир!<br>ПРИВЕТ, МИР!</code></pre>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/strings.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

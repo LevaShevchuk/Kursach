@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Условные конструкции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Условные конструкции</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Разработать программу, реализующую эпизод применения компьютера в книжном магазине. Компьютер запрашивает стоимость книги, сумму денег, внесённую покупателем. Если сдача не требуется, на экране печатается сообщение «Спасибо!». Если денег внесено больше, то печатает «Возьмите сдачу» и указывает сумму сдачи. Если денег недостаточно, то печатает об этом сообщение и указывает размер недостающей суммы.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите стоимость книги: "</span>);<br><span class="keywords">decimal</span> x = <span class="keywords-light">Convert</span>.ToDecimal(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите внесённую сумму денег: "</span>);<br><span class="keywords">decimal</span> y = <span class="keywords-light">Convert</span>.ToDecimal(<span class="keywords-light">Console</span>.ReadLine());<br><br><span class="keywords">if</span> (x == y)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Спасибо!"</span>);<br>}<br><br><span class="keywords">else if</span> (x &lt; y)<br>{<br>   <span class="keywords">decimal</span> z = y - x;<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Возьмите сдачу в размере "</span> + <span class="keywords-light">Math</span>.Round(z, 2) + <span class="string-code">" рублей"</span>);<br>}<br><br><span class="keywords">else</span><br>{<br>   <span class="keywords">decimal</span> z = x - y;<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Недостаточно денег! Необходимо внести ещё "</span> + <span class="keywords-light">Math</span>.Round(z, 2) + <span class="string-code">" рублей"</span>);<br>}<br><span class="keywords-light">Console</span>.ReadKey();</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите стоимость книги:<br>590<br>Введите внесённую сумму денег:<br>600<br>Возьмите сдачу в размере 10 рублей</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Разработать программу вычисления стоимости покупки с учетом скидки. Скидка в 3% предоставляется в том случае, если сумма покупки больше 500 руб., в 5% - если сумма больше 1000 руб.</p>
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Разработать программу, которая бы по введённому номеру единицы измерения (1 – килограмм, 2 – миллиграмм, 3 – грамм, 4 – тонна, 5 – центнер) и массе М выдавала соответствующее значение массы в килограммах.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Разработать программу, определяющую, существует ли прямоугольный треугольник со сторонами x,y,z. Если да – вычислить его площадь.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Массивы</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li class="active"><a href="contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Массивы</h2>
+                <p class="heading">Разбор типового задания</p>
+                <p class="descrip"><span class="highlight">Условие задачи:</span></p>
+                <p class="descrip">Заполнить одномерный массив B целыми числами из промежутка от -10 до 5.<br>Найти сумму и среднее арифметическое положительных чётных элементов массива.<br>Найти произведение отрицательных элементов массива.<br>Найти минимальный элемент массива.<br>Отсортировать массив по убыванию.</p>
+                <p class="descrip"><span class="highlight">Программный код:</span></p>
+                <pre class="example-code"><code><span class="comments">// блок объявления одномерного массива</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите размер одномерного массива: "</span>);<br><span class="keywords">int</span> x = <span class="keywords-light">Convert</span>.ToInt32(<span class="keywords-light">Console</span>.ReadLine());<br><span class="keywords">int</span>[] b = <span class="keywords">new int</span>[x];
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Одномерный массив B:"</span>);<br>
+<span class="keywords-light">Random</span> rand = <span class="keywords">new Random</span>();
+<span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)
+{
+    b[i] = rand.Next(-10, 6);
+    <span class="keywords-light">Console</span>.Write(b[i] + <span class="lilac">"\t"</span>);
+}
+<span class="keywords-light">Console</span>.WriteLine();
+
+<span class="comments">// блок определения суммы и среднего арифметического положительных и чётных элементов одномерного массива</span>
+<span class="keywords">int</span> sum = 0;
+<span class="keywords">int</span> k = 0;
+<span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)
+{
+    <span class="keywords">if</span> (b[i] > 0 && b[i] % 2 == 0)
+    {
+        sum += b[i];
+        k++;
+    }
+}
+
+<span class="keywords">if</span> (k > 0) <span class="comments">// проверка условия, что в одномерном массиве присутствует хотя бы один положительный чётный элемент</span>
+{
+    <span class="keywords">double</span> sr;
+    sr = 0;
+    sr = sum / k;
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Сумма положительных чётных элементов одномерного массива B равна "</span> + sum);
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Среднее арифметическое положительных чётных элементов одномерного массива B равно "</span> + <span class="keywords-light">Math</span>.Round(sr, 2));
+}
+
+<span class="comments">// вывод сообщения о том, что положительные чётные элементы в массиве отсутствуют</span>
+<span class="keywords">else</span>  
+{
+    <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Положительные чётные элементы одномерного массива B отсутствуют!"</span>);
+}
+
+<span class="comments">// блок определения произведения отрицательных элементов одномерного массива</span>
+<span class="keywords">int</span> pr = 1;
+<span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)
+{
+    <span class="keywords">if</span> (b[i] &lt; 0)
+    {
+        pr *= b[i];
+    }
+}
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Произведение отрицательных элементов одномерного массива B равно "</span> + pr);<br>
+<span class="comments">// блок определения минимального элемента одномерного массива</span>
+<span class="keywords">int</span> min = b[1];
+   <span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)
+    {
+     <span class="keywords">if</span> (b[i] &lt; min)
+   {
+      min = b[i];
+   }
+}
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Минимальный элемент одномерного массива B равен "</span> + min);<br>
+<span class="comments">// блок сортировки массива по убыванию методом «пузырька»</span>
+<span class="keywords">int</span> temp;
+<span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x - 1; i++)
+{
+    <span class="keywords">for</span> (<span class="keywords">int</span> j = i + 1; j &lt; x; j++)
+    {
+        <span class="keywords">if</span> (b[i] &lt; b[j])
+        {
+            temp = b[i];
+            b[i] = b[j];
+            b[j] = temp;
+        }
+     }
+}<br>
+<span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Одномерный массив B, отсортированный в порядке убывания:"</span>);
+<span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; x; i++)
+{
+     <span class="keywords-light">Console</span>.Write(b[i] + <span class="lilac">"\t"</span>);
+}
+<span class="keywords-light">Console</span>.ReadKey();</code></pre>
+<p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+<pre class="example-code console"><code>Введите размер одномерного массива:
+7
+Одномерный массив B:
+-8      -1      4       3       -2      3       -9
+Сумма положительных чётных элементов одномерного массива B равна 4
+Среднее арифметическое положительных чётных элементов одномерного массива B равно 4
+Произведение отрицательных элементов одномерного массива B равно 144
+Минимальный элемент одномерного массива B равен -9
+Одномерный массив B, отсортированный в порядке убывания:
+4       3       3       -1      -2      -8      -9</code></pre>
+                <p class="heading">Задания для самостоятельного решения</p>
+                <p class="descrip"><span class="highlight">Задание 1:</span></p>
+                <p class="descrip">Дан одномерный массив, заполненный случайным образом. Найти количество элементов, больших среднего арифметического всех элементов массива. Отсортировать массив по возрастанию.</p> 
+                <p class="descrip"><span class="highlight">Задание 2:</span></p>
+                <p class="descrip">Дан двумерный массив, заполненный случайным образом. Найти разность элементов данного массива.</p>
+                <p class="descrip"><span class="highlight">Задание 3:</span></p>
+                <p class="descrip">Дан двумерный массив. Заполнить его счётчиком случайных чисел в промежутке от -20 до 10. Найти сумму нечётных и отрицательных элементов двумерного массива. Найти произведение элементов двумерного массива, кратных числу Н или меньших 10. Найти максимальный элемент двумерного массива.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Условные конструкции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Условные конструкции</h2>
+                <p class="descrip"><span class="highlight">Условные конструкции</span> - один из базовых компонентов многих языков программирования, которые направляют работу программы по одному из путей в зависимости от определённых условий.</p>
+                <p class="descrip">В языке <span class="highlight">C#</span> используются следующие условные конструкции: <span class="highlight">if/else</span> и <span class="highlight">switch/case</span></p>
+                <p class="heading">Конструкция if/else</p>
+                <p class="descrip">Конструкция <span class="highlight">if/else</span> проверяет истинность некоторого условия и в зависимости от результатов проверки выполняет определённый код:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> num1 = 8;<br><span class="keywords">int</span> num2 = 6;<br><span class="keywords">if</span> (num1 > num2)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">больше числа</span> {num2}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip">После ключевого слова <span class="highlight">if</span> ставится условие. И если это условие выполняется, то срабатывает код, который помещён далее в блоке <span class="highlight">if</span> после фигурных скобок. В качестве условий выступают операции сравнения.</p>
+                <p class="descrip">В данном случае первое число больше второго, поэтому выражение <span class="highlight">num1 > num2</span> истинно и возвращает <span class="highlight">true</span>, следовательно, управление переходит к строке <span class="highlight">Console.WriteLine("Число {num1} больше числа {num2}")</span>;</p>
+                <p class="descrip">Но что делать, если необходимо, чтобы при несоблюдении условия также выполнялись какие-либо действия? В этом случае следует добавить блок <span class="highlight">else</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> num1 = 8;<br><span class="keywords">int</span> num2 = 6;<br><span class="keywords">if</span> (num1 > num2)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">больше числа</span> {num2}<span class="string-code">"</span>);<br>}<br><span class="keywords">else</span><br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">меньше числа</span> {num2}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip">Но при сравнении чисел можно получить одно из трёх возможных состояний: первое число больше второго, первое число меньше второго и числа равны. При использовании конструкции <span class="highlight">if/else</span> появляется возможность обрабатывать дополнительные условия:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> num1 = 8;<br><span class="keywords">int</span> num2 = 6;<br><span class="keywords">if</span> (num1 > num2)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">больше числа</span> {num2}<span class="string-code">"</span>);<br>}<br><span class="keywords">else if</span> (num1 &lt; num2)<br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">меньше числа</span> {num2}<span class="string-code">"</span>);<br>}<br><span class="keywords">else</span><br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Число num1 равно числу num2"</span>);<br>}</code></pre>
+                <p class="descrip">Также можно соединить сразу несколько условий, используя логические операторы:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> num1 = 8;<br><span class="keywords">int</span> num2 = 6;<br><span class="keywords">if</span> (num1 > num2 && num1 == 8) <br>{<br>   <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Число</span> {num1} <span class="string-code">больше числа</span> {num2}<span class="string-code">"</span>);<br>}</code></pre>
+                <p class="descrip">В данном случае блок <span class="highlight">if</span> будет выполняться, если <span class="highlight">num1 > num2</span> равно <span class="highlight">true</span> и <span class="highlight">num1 == 8</span> равно <span class="highlight">true</span>.</p>
+                <p class="heading">Конструкция switch/case</p>
+                <p class="descrip">Конструкция <span class="highlight">switch/case</span> аналогична конструкции <span class="highlight">if/else</span>, так как позволяет обработать сразу несколько условий:</p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Нажмите Y или N:"</span>);<br><span class="keywords">string</span> selection = <span class="keywords-light">Console</span>.ReadLine();<br><span class="keywords">switch</span> (selection) <br>{<br>    <span class="keywords">case</span> <span class="string-code">"Y"</span>:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Вы нажали букву Y"</span>);<br>       <span class="keywords">break</span>;<br>    <span class="keywords">case</span> <span class="string-code">"N"</span>:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Вы нажали букву N"</span>);<br>       <span class="keywords">break</span>;<br>    <span class="keywords">default</span>:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Вы нажали неизвестную букву"</span>);<br>       <span class="keywords">break</span>;<br>}</code></pre>
+                <p class="descrip">После ключевого слова <span class="highlight">switch</span> в скобках следует сравниваемое выражение. Значение этого выражения последовательно сравнивается со значениями, помещёнными после оператора <span class="highlight">сase</span>. И если совпадение будет найдено, то будет выполняться определённый блок <span class="highlight">сase</span>.</p>
+                <p class="descrip">В конце каждого блока <span class="highlight">сase</span> должен ставиться один из операторов перехода: <span class="highlight">break</span>, <span class="highlight">goto case</span> или <span class="highlight">return</span>. Как правило, используется оператор <span class="highlight">break</span>. При его применении другие блоки <span class="highlight">case</span> выполняться не будут.</p>
+                <p class="descrip">Однако если необходимо, чтобы, наоборот, после выполнения текущего блока <span class="highlight">case</span> выполнялся другой блок <span class="highlight">case</span>, нужно использовать вместо <span class="highlight">break</span> оператор <span class="highlight">goto case</span>:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> number = 1;<br><span class="keywords">switch</span> (number) <br>{<br>    <span class="keywords">case</span> 1:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"case 1"</span>);<br>       <span class="keywords">goto case</span> 5;  <span class="comments">// переход к case 5</span><br>    <span class="keywords">case</span> 3:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"case 3"</span>);<br>       <span class="keywords">break</span>;<br>    <span class="keywords">case</span> 5:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"case 5"</span>);<br>       <span class="keywords">break</span>;<br>    <span class="keywords">default</span>:<br>       <span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"default"</span>);<br>       <span class="keywords">break</span>;<br>}</code></pre>
+                <p class="descrip">Если нужно также обработать ситуацию, когда совпадения не будут найдены, то можно добавить блок <span class="highlight">default</span>, как в вышеприведённом примере.</p>
+                <p class="descrip">Применение оператора <span class="highlight">return</span> позволит выйти не только из блока <span class="highlight">case</span>, но и из вызывающего метода. Следовательно, если в методе <span class="highlight">Main</span> после конструкции <span class="highlight">switch..case</span>, в которой используется оператор <span class="highlight">return</span>, идут какие-либо операторы и выражения, то они выполняться не будут, а метод <span class="highlight">Main</span> завершит работу.</p>
+                <p class="heading">Тернарная операция</p>
+                <p class="descrip"><span class="highlight">Тернарная операция</span> имеет следующий синтаксис: <span class="highlight">[первый операнд - условие] ? [второй операнд] : [третий операнд]</span>. Здесь используется сразу три операнда. В зависимости от условия тернарная операция возвращает второй или третий операнд: если условие равно <span class="highlight">true</span>, то возвращается второй операнд; если условие равно <span class="highlight">false</span>, то третий. Например:</p>
+                <pre class="example-code"><code><span class="keywords">int</span> x = 3;<br><span class="keywords">int</span> y = 2;<br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Нажмите + или -"</span>);<br><span class="keywords">string</span> selection = <span class="keywords-light">Console</span>.ReadLine();<br><br><span class="keywords">int</span> z = selection == <span class="string-code">"+"</span> ? (x+y) : (x-y);<br><span class="keywords-light">Console</span>.WriteLine(z);</code></pre>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Нажмите + или -<br>-<br>1</code></pre>
+                <p class="descrip">В данном случае результатом <span class="highlight">тернарной операции</span> является переменная <span class="highlight">z</span>. Если выше было введено <span class="highlight">«+»</span>, то <span class="highlight">z</span> будет равно второму операнду - <span class="highlight">(x+y)</span>. Иначе <span class="highlight">z</span> будет равно третьему операнду.</p>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/corditionalconstr.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>			
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

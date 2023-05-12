@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Рекурсивные функции</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li class="active"><a href="contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Рекурсивные функции</h2>
+                <p class="descrip"><span class="highlight">Рекурсивная функция</span> представляет собой конструкцию, при которой <span class="highlight">функция</span> вызывает саму себя.</p>
+                <p class="descrip">Примером <span class="highlight">рекурсивной функции</span> является <span class="highlight">вычисление факториала</span> по формуле n! = 1 * 2 * … * n. <span class="highlight">Факториал</span> числа 5 равен 120 (1 * 2 * 3 * 4 * 5 = 120).</p>
+                <p class="descrip">Далее приведён <span class="highlight">метод</span> для нахождения <span class="highlight">факториала</span>:</p>
+                <pre><code class="example-code"><span class="keywords">static int</span> Factorial(<span class="keywords">int</span> x)<br>{<br>   <span class="keywords">if</span> (x == 0)<br>   {<br>      <span class="keywords">return</span> 1;<br>   }<br>   <span class="keywords">else</span><br>   {<br>      <span class="keywords">return</span> x * Factorial(x - 1);<br>   }<br>}</code></pre>
+                <p class="descrip">В данном программном коде задаётся условие, что если вводимое число не равно 0, то данное число умножается на результат этой же <span class="highlight">функции</span>, в которую в качестве параметра передаётся число x-1. В данном случае происходит <span class="highlight">рекурсивный спуск</span>. И так, пока программа не дойдёт до того момента, когда значение параметра не будет равно единице.</p>
+                <p class="descrip">При создании <span class="highlight">рекурсивной функции</span> в ней обязательно должен быть некоторый базовый вариант, который использует оператор <span class="highlight">return</span> и помещается в начале <span class="highlight">функции</span>. В случае с <span class="highlight">факториалом</span> используется следующий базовый вариант:</p>
+                <pre><code class="example-code"><span class="keywords">if</span> (x == 0)<br>{<br>   <span class="keywords">return</span> 1;<br>}</code></pre>
+                <p class="descrip">Кроме того, все <span class="highlight">рекурсивные вызовы</span> должны обращаться к <span class="highlight">подфункциям</span>, которые в конце концов сходятся к базовому варианту. Так, при передаче в <span class="highlight">функцию</span> положительного числа при дальнейших рекурсивных вызовах <span class="highlight">подфункций</span> в них будет передаваться каждый раз число, меньшее на единицу. И в конце концов программа дойдёт до ситуации, когда число будет равно 0, и будет использован базовый вариант.</p>
+                <p class="descrip">Другим распространённым показательным примером <span class="highlight">рекурсивной функции</span> служит <span class="highlight">функция</span>, вычисляющая <span class="highlight">числа Фиббоначчи</span>. n-й член <span class="highlight">последовательности Фибоначчи</span> определяется по формуле: f(n) = f(n-1) + f(n-2), причём f(0) = 0, а f(1) = 1. <span class="highlight">Последовательность Фибоначчи</span> будет выглядеть так: 0 (0-й член), 1 (1-й член), 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, .... Для определения чисел этой последовательности далее определён следующий <span class="highlight">метод:</span></p>
+                <pre><code class="example-code"><span class="keywords">static int</span> fibonacci(<span class="keywords">int</span> n)<br>{<br>   <span class="keywords">if</span> (n == 0)<br>   {<br>      <span class="keywords">return</span> 0;<br>   }<br>   <span class="keywords">else if</span> (n == 1)<br>   {<br>      <span class="keywords">return</span> 1;<br>   }<br>   <span class="keywords">else</span><br>   {<br>      <span class="keywords">return</span> Fibonacci(n - 1) + Fibonacci(n - 2);<br>   }<br>}</code></pre>
+                <p class="descrip">Если сократить первые две условные конструкции, то <span class="highlight">метод</span> можно представить следующим образом:</p>
+                <pre><code class="example-code"><span class="keywords">static int</span> fibonacci(<span class="keywords">int</span> n)<br>{<br>   <span class="keywords">if</span> (n == 0 || n == 1)<br>   {<br>      <span class="keywords">return</span> n;<br>   }<br>   <span class="keywords">else</span><br>   {<br>      <span class="keywords">return</span> Fibonacci(n - 1) + Fibonacci(n - 2);<br>   }<br>}</code></pre>
+                <p class="descrip">Выше были приведены простейшие примеры <span class="highlight">рекурсивных функций</span>, которые призваны дать понимание работы <span class="highlight">рекурсии</span>. В то же время для обоих <span class="highlight">функций</span> вместо <span class="highlight">рекурсий</span> можно использовать <span class="highlight">циклические конструкции</span>. И, как правило, альтернативы на основе <span class="highlight">циклов</span> работают быстрее и более эффективны, чем <span class="highlight">рекурсия</span>. Ниже приведён пример вычисления <span class="highlight">чисел Фибоначчи</span> с помощью <span class="highlight">циклов</span>:</p>
+                <pre><code class="example-code"><span class="keywords">static int</span> fibonacci(<span class="keywords">int</span> n)<br>{<br>   <span class="keywords">int</span> a = 0;<br>   <span class="keywords">int</span> b = 1;<br>   <span class="keywords">int</span> tmp;<br><br>   <span class="keywords">for</span> (<span class="keywords">int</span> i = 0; i &lt; n; i++)<br>   {<br>      tmp = a;<br>      a = b;<br>      b += tmp;<br>   }<br><br>   <span class="keywords">return</span> a;<br>}</code></pre>
+                <p class="descrip">В то же время в некоторых ситуациях <span class="highlight">рекурсия</span> предоставляет элегантное решение, например, при обходе различных древовидных представлений, к примеру, дерева каталогов и файлов.</p>
+                <div class="but-link">
+                    <a class="button-link" href="../practical/functions.html">Перейти к практическим заданиям</a> 
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>		
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

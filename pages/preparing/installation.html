@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Установка Visual Studio 2022 Community</title>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li class="active"><a href="contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li><a href="../reference/contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Установка Visual Studio 2022 Community</h2>
+                <p class="descrip">Для создания приложения на языке <span class="highlight">C#</span> необходимы:</p> 
+                <ul>
+                    <li class="descrip-li"><span class="highlight">Текстовый редактор</span>, в котором была бы возможность напечатать код программы;</li>
+                    <li class="descrip-li"><span class="highlight">Компилятор</span>, который бы скомпилировал набранный в текстовом редакторе программный код в приложение <span class="highlight">exe</span>;</li>
+                    <li class="descrip-li"><span class="highlight">Фреймворк .NET</span>, который требуется для компиляции и выполнения программы.</li>
+                </ul>
+                <p class="descrip">Для того, чтобы облегчить написание, а также тестирование и отладку программного кода обычно используют специальные среды разработки, в частности, <span class="highlight">Visual Studio</span>.</p>
+                <p class="descrip">Для создания приложений на <span class="highlight">C#</span> в рамках данного электронного сборника используется бесплатная и полнофункциональная среда разработки <span class="highlight">Visual Studio Community 2022</span>.</p>
+                <div class="image-container"><img src="../../assets/images/install.png" alt="install"></div>
+                <div class="but-link">
+                    <a class="button-link" href="https://visualstudio.microsoft.com/ru/downloads/">Скачать</a> 
+                </div>
+                <p class="descrip">После загрузки необходимо запустить программу установщика. В открывшемся окне будет предложено выбрать те компоненты, которые можно установить вместе с <span class="highlight">Visual Studio</span>. Следует отметить, что <span class="highlight">Visual Studio</span> - очень функциональная среда разработки и позволяет разрабатывать приложения с помощью множества языков и платформ. В наборе рабочих нагрузок необходимо выбрать пункт <span class="highlight">«Разработка классических приложений .NET»</span>. Можно выбрать больше опций или вообще все опции, однако стоит учитывать свободный размер на жёстком диске - чем больше опций будет выбрано, соответственно, тем больше места на диске будет занято.</p>
+                <div class="image-container"><img src="../../assets/images/install1.png" alt="install1"></div>
+                <p class="descrip">При инсталляции <span class="highlight">Visual Studio</span> на компьютер будут установлены все необходимые инструменты для разработки программ, в том числе <span class="highlight">фреймворк .NET 5.</span></p>
+                <p class="descrip">После завершения установки можно перейти к созданию первой программы. Вначале необходимо открыть <span class="highlight">Visual Studio</span>. На стартовом экране нужно выбрать пункт <span class="highlight">«Создание проекта»</span>.</p>
+                <div class="image-container"><img src="../../assets/images/start.png" alt="start"></div>
+                <p class="descrip">В следующем окне в качестве типа проекта следует выбрать пункт <span class="highlight">«Консольное приложение»</span>.</p>
+                <div class="image-container"><img src="../../assets/images/start1.png" alt="start1"></div>
+                <p class="descrip">Далее в поле <span class="highlight">«Имя пректа»</span> необходимо дать проекту какое-либо название. Например, <span class="highlight">HelloApp</span>. А также указать папку, где будет располагаться проект. После чего необходимо нажать <span class="highlight">«Далее»</span>.</p>
+                <div class="image-container"><img src="../../assets/images/start2.png" alt="start2"></div>
+                <p class="descrip">В появившемся окне необходимо выбрать в меню раскрывающегося списка актуальную версию .NET <span class="highlight">«.Net 7.0 (Поддержка со стандартным сроком)»</span> и нажать <span class="highlight">«Создать»</span>.</p>
+                <div class="image-container"><img src="../../assets/images/start3.png" alt="start3"></div>
+                <p class="descrip">После этого <span class="highlight">Visual Studio</span> создаст и откроет проект:</p>
+                <div class="image-container"><img src="../../assets/images/start4.png" alt="start4"></div>
+                <p class="descrip">В большом поле, расположенном в центре и представляющим собой текстовый редактор, находится сгенерированный по умолчанию программный код <span class="highlight">C#</span>.</p>
+                <p class="descrip">Справа находится окно <span class="highlight">Обозревателя решений</span>, в котором можно увидеть <span class="highlight">структуру проекта</span>. В данном случае в окне отображается сгенерированная по умолчанию структура: узел <span class="highlight">Зависимости</span> - это узел содержит сборки <span class="highlight">dll</span>, которые добавлены в проект по умолчанию. Эти сборки содержат классы библиотеки <span class="highlight">.NET</span>, которые будет использовать <span class="highlight">C#</span>. Однако не всегда все сборки нужны. Ненужные потом можно удалить, в то же время если понадобится добавить какую-нибудь нужную библиотеку, то именно в этот узел она будет добавляться.</p>
+                <p class="descrip">Далее представлен непосредственно сам файл программного кода программы <span class="highlight">Program.cs.</span> Как раз этот файл и открыт в центральном окне. В данный момент в файле содержится 2 строчки программного кода:</p>
+                <pre class="example-code"><code><span class="comments">// See <a href="https://aka.ms/new-console-template" target="_blank" style="color:#008000">https://aka.ms/new-console-template</a> for more information</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Hello, World!"</span>)</code></pre>
+                <p class="descrip">Теперь можно запустить на выполнение с помощью клавиши <span class="highlight">F5</span> или с <span class="highlight">Панели инструментов</span>, нажав зелёную стрелочку. В результате выполнения данной программы в консоли должна отобразиться строчка <span class="highlight">Hello, World!</span></p>
+                <pre class="example-code console"><code>Hello, World!</code></pre>
+                <p class="descrip">Теперь необходимо изменить весь программный код на следующий:</p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите своё имя: "</span>);<br><span class="keywords">string</span> name = <span class="keywords-light">Console</span>.ReadLine(); <span class="comments">        // вводим своё имя</span><br><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Привет,</span> {name}<span class="string-code">!"</span>);<span class="comments">    // выводим имя на консоль</span></code></pre>
+                <p class="descrip">Метод <span class="highlight">Console.Write()</span> используется для вывода на консоль некоторой строки. В данном случае выводится строчка <span class="highlight">"Введите своё имя: "</span></p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">"Введите своё имя: "</span>);</code></pre>
+                <p class="descrip">На второй строке определяется строковая переменная <span class="highlight">name</span>, в которую пользователь вводит информацию с консоли:</p>
+                <pre class="example-code"><code><span class="keywords">var</span> name = <span class="keywords-light">Console</span>.ReadLine();</code></pre>
+                <p class="descrip">Ключевое слово <span class="highlight">var</span> применяется для определения переменных. В данном случае переменная называется <span class="highlight">name</span>. И ей присваивается результат метода <span class="highlight">Console.ReadLine()</span>, при помощи которого можно считать с консоли строку и записать её в значение переменной <span class="highlight">name</span>.</p>
+                <p class="descrip">Затем введённое имя выводится на консоль:</p>
+                <pre class="example-code"><code><span class="keywords-light">Console</span>.WriteLine(<span class="string-code">$"Привет,</span> {name}<span class="string-code">!"</span>);</code></pre>
+                <p class="descrip">Для того, чтобы ввести значение переменной <span class="highlight">name</span> внутрь выводимой на консоль строки, применяются фигурные скобки <span class="highlight">{}</span>. При выводе строки на консоль выражение <span class="highlight">{name}</span> будет заменяться на значение переменной <span class="highlight">name</span> - введённое имя.</p>
+                <p class="descrip">Однако для того, чтобы можно было вводить таким образом значения переменных внутрь строки, перед строкой указывается знак доллара <span class="highlight">$</span>.</p>
+                <p class="descrip">Теперь необходимо протестировать проект, запустив его на выполнение, нажав клавишу <span class="highlight">F5</span> или зелёную стрелочку на панели <span class="highlight">Visual Studio</span>.</p>
+                <p class="descrip"><span class="highlight">Пример работы программы:</span></p>
+                <pre class="example-code console"><code>Введите своё имя:<br>Лев<br>Привет, Лев!</code></pre>
+                <p class="descrip">Первое приложение создано! Его можно найти на жёстком диске в папке проекта в каталоге <span class="highlight">bin\Debug\net7.0</span>. Оно будет называться по имени проекта и иметь расширение <span class="highlight">exe</span>. И затем этот файл можно будет запускать без <span class="highlight">Visual Studio</span>, а также переносить его на другие компьютеры, где установлен <span class="highlight">фреймворк .NET 7</span>.</p>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>

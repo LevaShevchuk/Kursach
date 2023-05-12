@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
+    <title>Ключевые слова</title>
+    <script src="../../assets/js/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="basis">
+        <header>
+            <nav>
+                <input type="checkbox" id="checkbox-menu">
+                <label for="checkbox-menu">
+                    <div class='close' id='closer'></div>
+                    <ul class="navigation touch">
+                        <li><a href="../main/main.html">Главная</a></li>
+                        <li><a href="../preparing/contents.html">Подготовка к работе с C#</a></li>
+                        <li><a href="../basics/contents.html">Основы работы в C#</a></li>
+                        <li><a href="../practical/contents.html">Практические задания</a></li>
+                        <li class="active"><a href="contents.html">Справочные материалы</a></li>
+                    </ul>
+                </label>
+            </nav> 
+        </header>
+        <div class="back">
+            <a class="goback" href="#"><img src="../../assets/images/back.png" alt="back"></a>
+        </div>
+        <div class="center">
+            <div class="main-page">
+                <h2 class="title">Ключевые слова</h2>
+                <p class="descrip"><span class="highlight">Ключевые слова</span> — предварительно определённые зарезервированные идентификаторы, которые имеют специальные значения для компилятора.</p>
+                <p class="heading">Глоссарий ключевых слов</p>
+                <div class="glossary">
+                    <div class="letters">
+                        <button class="letter-links alfavit" id="sp_1">A</button>
+                        <button class="letter-links alfavit" id="sp_2">B</button>
+                        <button class="letter-links alfavit" id="sp_3">C</button>
+                        <button class="letter-links alfavit" id="sp_4">D</button>
+                        <button class="letter-links alfavit" id="sp_5">E</button>
+                        <button class="letter-links alfavit" id="sp_6">F</button>
+                        <button class="letter-links alfavit" id="sp_7">G</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_8" disabled>H</button>
+                        <button class="letter-links alfavit" id="sp_9">I</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_10" disabled>J</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_11" disabled>K</button>
+                        <button class="letter-links alfavit" id="sp_12">L</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_13" disabled>M</button>                        
+                        <br class = "letter-separator">
+                        <button class="letter-links alfavit" id="sp_14">N</button>
+                        <button class="letter-links alfavit" id="sp_15">O</button>
+                        <button class="letter-links alfavit" id="sp_16">P</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_17" disabled>Q</button>
+                        <button class="letter-links alfavit" id="sp_18">R</button>
+                        <button class="letter-links alfavit" id="sp_19">S</button>
+                        <button class="letter-links alfavit" id="sp_20">T</button>
+                        <button class="letter-links alfavit" id="sp_21">U</button>
+                        <button class="letter-links alfavit" id="sp_22">V</button>
+                        <button class="letter-links alfavit" id="sp_23">W</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_24" disabled>X</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_25" disabled>Y</button>
+                        <button class="letter-links alfavit letter-disabled" id="sp_26" disabled>Z</button>
+                    </div>
+                    <div class="sp_body" id="body_1">
+                        <p class="descrip"><span class="highlight">abstract</span> — указывает, что изменяемый элемент имеет отсутствующую или неполную реализацию. Модификатор <span class="highlight">abstract</span> можно использовать с классами, методами, свойствами, индексаторами и событиями.</p>
+                        <p class="descrip"><span class="highlight">as</span> — явным образом преобразует результат выражения в указанный ссылочный или поддерживающий значения <span class="highlight">NULL</span> тип. Если такое преобразование невозможно, оператор <span class="highlight">as</span> возвращает значение <span class="highlight">null</span>.</p>
+                    </div>
+                    <div class="sp_body" id="body_2">
+                        <p class="descrip"><span class="highlight">base</span> — используется для доступа к членам базового класса из производного.</p>
+                        <p class="descrip"><span class="highlight">bool</span> — псевдоним для типа структуры <span class="highlight">System.Boolean .NET</span>, представляющий логическое значение: <span class="highlight">true</span> или <span class="highlight">false</span>.</p>
+                        <p class="descrip"><span class="highlight">break</span> — завершает выполнение ближайшего оператора внешнего цикла или <span class="highlight">switch</span>, в котором он находится. Управление передаётся оператору, который расположен после завершённого оператора.</p>
+                        <p class="descrip"><span class="highlight">byte</span> — тип данных, хранящий целое число от 0 до 255 и занимающий 1 байт. Представлен системным типом <span class="highlight">System.Byte</span>.</p>
+                    </div>
+                    <div class="sp_body" id="body_3">
+                        <p class="descrip"><span class="highlight">case</span> — оператор выбора, используемый в условной конструкции <span class="highlight">switch/case</span>.</p>
+                        <p class="descrip"><span class="highlight">catch</span> — задаёт обработчик для различных исключений.</p>
+                        <p class="descrip"><span class="highlight">char</span> — хранит одиночный символ в кодировке <span class="highlight">Unicode</span> и занимает 2 байта. Представлен системным типом <span class="highlight">System.Char</span>.</p>
+                        <p class="descrip"><span class="highlight">checked</span> — используется для явного включения проверки переполнения при выполнении арифметических операций и преобразований с данными целого типа.</p>
+                        <p class="descrip"><span class="highlight">class</span> — используется для объявления <span class="highlight">классов</span>.</p>
+                        <p class="descrip"><span class="highlight">const</span> — используется для объявления константного поля или константной локальной.</p>
+                        <p class="descrip"><span class="highlight">continue</span> — передаёт управление следующей итерации вложенного оператора <span class="highlight">while</span>, <span class="highlight">do</span>, <span class="highlight">for</span> или <span class="highlight">foreach</span>, в котором она встречается.</p>
+                    </div>
+                    <div class="sp_body" id="body_4">
+                        <p class="descrip"><span class="highlight">decimal</span> — тип данных, хранящий десятичное дробное число. Если употребляется без десятичной запятой, имеет значение от ±1.0 * 10<sup>-28</sup> до ±7.9228 * 10<sup>28</sup>, может хранить 28 знаков после запятой и занимает 16 байт. Представлен системным типом <span class="highlight">System.Decimal</span>.</p>
+                        <p class="descrip"><span class="highlight">default</span> — используется для указания метки по умолчанию в инструкции <span class="highlight">switch</span>. Также ключевое слово <span class="highlight">default</span> применяется в качестве оператора или литерала по умолчанию для создания значения по умолчанию для типа.</p>
+                        <p class="descrip"><span class="highlight">delegate</span> — имеет ссылочный тип, который можно использовать для инкапсуляции именованного или анонимного метода.</p> 
+                        <p class="descrip"><span class="highlight">do</span> — выполняет оператор или блок операторов, пока определенное логическое выражение равно значению <span class="highlight">true</span>.</p>
+                        <p class="descrip"><span class="highlight">double</span> — тип данных, хранящий число с плавающей точкой от ±5.0 * 10<sup>-324</sup> до ±1.7 * 10<sup>308</sup> и занимающий 8 байта. Представлен системным типом <span class="highlight">System.Double</span>.</p>
+                    </div>
+                    <div class="sp_body" id="body_5">
+                        <p class="descrip"><span class="highlight">else</span> — иначе.</p>
+                        <p class="descrip"><span class="highlight">enum</span> — тип значения, определённый набором именованных констант применяемого целочисленного типа.</p>
+                        <p class="descrip"><span class="highlight">event</span> — используется для объявления события в классе <span class="highlight">Publisher</span>.</p>
+                        <p class="descrip"><span class="highlight">explicit</span> — используется для явного преобразования типов.</p>
+                        <p class="descrip"><span class="highlight">extern</span> — используется для объявления метода с внешней реализацией.</p>
+                    </div>
+                    <div class="sp_body" id="body_6">
+                        <p class="descrip"><span class="highlight">false</span> — ложь.</p>
+                        <p class="descrip"><span class="highlight">finally</span> — позволяет выполнить очистку всех ресурсов, выделенных в блоке <span class="highlight">try</span>, и запускать программный код даже при возникновении исключения в блоке <span class="highlight">try</span>.</p>
+                        <p class="descrip"><span class="highlight">fixed</span> — задаёт указатель на управляемую переменную и «закрепляет» эту переменную во время выполнения оператора.</p>
+                        <p class="descrip"><span class="highlight">float</span> — тип данных, хранящий число с плавающей точкой от -3.4 * 10<sup>38</sup> до 3.4 * 10<sup>38</sup> и занимающий 4 байта. Представлен системным типом <span class="highlight">System.Single</span>.</p>
+                        <p class="descrip"><span class="highlight">for</span> — выполняет оператор или блок операторов, пока определённое логическое выражение равно значению <span class="highlight">true</span>.</p>
+                        <p class="descrip"><span class="highlight">foreach</span> — выполняет оператор или блок операторов для каждого элемента в экземпляре типа, который реализует интерфейс <span class="highlight">System.Collections.IEnumerable</span> или <span class="highlight">System.Collections.Generic.IEnumerable&lt;T&gt;</span>.</p>
+                    </div>
+                    <div class="sp_body" id="body_7">      
+                        <p class="descrip"><span class="highlight">goto</span> — передаёт управление программой непосредственно оператору с меткой.</p>
+                    </div>
+                    <div class="sp_body" id="body_9">
+                        <p class="descrip"><span class="highlight">if</span> — определяет, какой оператор будет выполняться при выполнении условия, заданного логическим выражением.</p>
+                        <p class="descrip"><span class="highlight">implicit</span> — используется для неявного преобразования типов.</p>
+                        <p class="descrip"><span class="highlight">in</span> — вызывает передачу аргументов по ссылке, но гарантирует, что аргумент не будет изменен. Также ключевое слово <span class="highlight">in</span> указывает, что параметр типа является контравариантным.</p>
+                        <p class="descrip"><span class="highlight">int</span> — тип данных, хранящий целое число от -2 147 483 648 до 2 147 483 647 и занимающий 4 байта. Представлен системным типом <span class="highlight">System.Int32</span>. Все целочисленные литералы по умолчанию представляют значения типа <span class="highlight">int</span>.</p>
+                        <p class="descrip"><span class="highlight">interface</span> — ссылочный тип, который может определять некоторый функционал - набор методов и свойств без реализации.</p>
+                        <p class="descrip"><span class="highlight">internal</span> — является модификатором доступа для типов и членов типов.</p>
+                        <p class="descrip"><span class="highlight">is</span> — проверяет, совместим ли тип среды выполнения для определённого выражения с указанным типом. Также ключевое слово <span class="highlight">is</span> проверяет соответствие результата выражения указанному шаблону.</p>
+                    </div>
+                    <div class="sp_body" id="body_12">
+                        <p class="descrip"><span class="highlight">lock</span> — получает взаимоисключающую блокировку заданного объекта перед выполнением определённых операторов, а затем снимает блокировку.</p>
+                        <p class="descrip"><span class="highlight">long</span> — тип данных, хранящий целое число от –9 223 372 036 854 775 808 до 9 223 372 036 854 775 807 и занимающий 8 байт. Представлен системным типом <span class="highlight">System.Int64</span>.</p>
+                    </div>
+                    <div class="sp_body" id="body_14">
+                        <p class="descrip"><span class="highlight">namespace</span> — используется для объявления области действия, которая содержит набор связанных объектов.</p>
+                        <p class="descrip"><span class="highlight">new</span> — создаёт экземпляр типа, а также может использоваться как модификатор объявления члена или ограничение универсального типа.</p>
+                        <p class="descrip"><span class="highlight">null</span> — является литералом, представляющим пустую ссылку, которая не ссылается на объект.</p>
+                    </div>
+                    <div class="sp_body" id="body_15">
+                        <p class="descrip"><span class="highlight">object</span> — тип данных, который может хранить значение любого из типов данных языка <span class="highlight">C#</span> и занимает 4 байта на 32-разрядной платформе и 8 байт на 64-разрядной платформе. Представлен системным типом <span class="highlight">System.Object</span>, который является базовым для всех других типов и классов <span class="highlight">.NET</span>.</p>
+                        <p class="descrip"><span class="highlight">operator</span> — используется для объявления оператора.</p>
+                        <p class="descrip"><span class="highlight">out</span> — используется в качестве модификатора параметра, который позволяет передавать аргумент в метод по ссылке, а не по значению. Также ключевое слово <span class="highlight">out</span> может применяться в объявлениях параметров универсального типа для интерфейсов и делегатов, что указывает на то, что параметр типа является ковариантным.</p>
+                        <p class="descrip"><span class="highlight">override</span> — требуется для расширения или изменения абстрактной или виртуальной реализации унаследованного метода, свойства, индексатора или события.</p>
+                    </div>
+                    <div class="sp_body" id="body_16">
+                        <p class="descrip"><span class="highlight">params</span> — используется для указания параметра метода, принимающего переменное число аргументов. Тип параметра должен быть одномерным массивом.</p>
+                        <p class="descrip"><span class="highlight">private</span> — является модификатором доступа к члену.</p>
+                        <p class="descrip"><span class="highlight">protected</span> — является модификатором доступа к защищённому члену.</p>
+                        <p class="descrip"><span class="highlight">public</span> — является модификатором доступа для типов и членов типов с максимальными правами.</p>    
+                    </div>
+                    <div class="sp_body" id="body_18">
+                        <p class="descrip"><span class="highlight">readonly</span> — указывает на то, что присваивание значения полю может происходить только при объявлении или в конструкторе этого класса. Также ключевое слово <span class="highlight">readonly</span> означает, что тип структуры является неизменяемым.</p>                 
+                        <p class="descrip"><span class="highlight">ref</span> — указывает, что значение передаётся по ссылке.</p>
+                        <p class="descrip"><span class="highlight">return</span> — завершает выполнение метода, в котором он присутствует, и возвращает управление вызывавшему методу.</p>
+                    </div>
+                    <div class="sp_body" id="body_19">
+                        <p class="descrip"><span class="highlight">sbyte</span> — тип данных, хранящий целое число от -128 до 127 и занимающий 1 байт. Представлен системным типом <span class="highlight">System.SByte</span>.</p>
+                        <p class="descrip"><span class="highlight">sealed</span> — запрещает другим классам наследовать от этого класса.</p>
+                        <p class="descrip"><span class="highlight">short</span> — тип данных, хранящий целое число от -32 768 до 32 767 и занимает 2 байта. Представлен системным типом <span class="highlight">System.Int16</span>.</p>
+                        <p class="descrip"><span class="highlight">sizeof</span> — позволяет получать число байт, занятых переменной заданного типа.</p>
+                        <p class="descrip"><span class="highlight">stackalloc</span> — выделяет блок памяти в стеке.</p>
+                        <p class="descrip"><span class="highlight">static</span> — используется для объявления статического члена, принадлежащего собственно типу, а не конкретному объекту. Также модификатор <span class="highlight">static</span> можно использовать для объявления классов <span class="highlight">static</span>.</p>
+                        <p class="descrip"><span class="highlight">string</span> — тип данных, хранящий набор символов <span class="highlight">Unicode</span>. Представлен системным типом <span class="highlight">System.String</span>. Данному типу соответствуют строковые литералы.</p>
+                        <p class="descrip"><span class="highlight">struct</span> — представляет собой тип значения, который может инкапсулировать данные и связанные функции.</p>
+                        <p class="descrip"><span class="highlight">switch</span> — оператор выбора, который выбирает для выполнения один раздел <span class="highlight">switch</span> из списка кандидатов, сравнивая их с выражением соответствия.</p>
+                    </div>
+                    <div class="sp_body" id="body_20">
+                        <p class="descrip"><span class="highlight">this</span> — ссылается на текущий экземпляр класса, а также используется в качестве модификатора первого параметра метода расширения.</p>   
+                        <p class="descrip"><span class="highlight">throw</span> — сообщает о возникновении исключения во время выполнения программы.</p>
+                        <p class="descrip"><span class="highlight">true</span> — правда.</p>
+                        <p class="descrip"><span class="highlight">try</span> — блок, содержащий защищённый программный код, который может вызвать исключение.</p>
+                        <p class="descrip"><span class="highlight">typeof</span> — получает экземпляр <span class="highlight">System.Type</span> для указанного типа.</p>
+                    </div>
+                    <div class="sp_body" id="body_21">
+                        <p class="descrip"><span class="highlight">uint</span> — тип данных, хранящий целое число от 0 до 4 294 967 295 и занимающий 4 байта. Представлен системным типом <span class="highlight">System.UInt32</span>.</p>
+                        <p class="descrip"><span class="highlight">ulong</span> — тип данных, хранящий целое число от 0 до 18 446 744 073 709 551 615 и занимающий 8 байт. Представлен системным типом <span class="highlight">System.UInt64</span>.</p>
+                        <p class="descrip"><span class="highlight">unchecked</span> — позволяет предотвратить проверку переполнения при выполнении арифметических операций и преобразований с данными целого типа.</p>
+                        <p class="descrip"><span class="highlight">unsafe</span> — обозначает небезопасный контекст, необходимый для выполнения любых операций с применением указателей.</p>
+                        <p class="descrip"><span class="highlight">ushort</span> — тип данных, хранящий целое число от 0 до 65 535 и занимающий 2 байта. Представлен системным типом <span class="highlight">System.UInt16</span>.</p>
+                        <p class="descrip"><span class="highlight">using</span> — создаёт псевдоним для пространства имён или импортирует типы, определённые в других пространствах имён. Также ключевое слово <span class="highlight">using</span> определяет область, по завершении которой объект удаляется.</p>
+                    </div>
+                    <div class="sp_body" id="body_22">
+                        <p class="descrip"><span class="highlight">virtual</span> — используется для изменения объявлений методов, свойств, индексаторов и событий и разрешения их переопределения в производном классе.</p>
+                        <p class="descrip"><span class="highlight">void</span> — используется в качестве возвращаемого типа метода (или локальной функции) для определения того, что метод не возвращает значение.</p>
+                        <p class="descrip"><span class="highlight">volatile</span> — означает, что поле может изменить несколько потоков, выполняемых одновременно.</p>
+                    </div>
+                    <div class="sp_body" id="body_23">
+                        <p class="descrip"><span class="highlight">while</span> — выполняет оператор или блок операторов, пока определённое логическое выражение равно значению <span class="highlight">true</span>.</p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="toTop" onclick="return up()"><img src="../../assets/images/top.png" alt="top"></a>
+        <footer>
+            <p><b>Разработчик:</b> Студент группы ПИ-21СВ Шевчук Лев Викторович<br>
+                <b>Образовательная программа:</b> 09.03.04 Программная инженерия<br>
+                НИУ ВШЭ-Пермь</p>
+        </footer>	
+    </div>
+<script src="../../assets/js/script.js"></script>
+</body>
+</html>
